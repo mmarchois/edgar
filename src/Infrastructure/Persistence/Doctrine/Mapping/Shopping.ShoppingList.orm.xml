@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity
+    name="App\Domain\Shopping\ShoppingList"
+    table="shopping_list">
+    <id name="uuid" type="guid" column="uuid"/>
+    <field name="name" type="string" column="name" nullable="false" length="100" />
+    <many-to-one field="group" target-entity="App\Domain\User\Group">
+        <join-column name="group_uuid" referenced-column-name="uuid" on-delete="CASCADE"/>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

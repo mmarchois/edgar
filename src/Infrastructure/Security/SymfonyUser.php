@@ -12,7 +12,7 @@ class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInterface
     public function __construct(
         private string $uuid,
         private string $email,
-        private string $fullName,
+        private string $pseudo,
         private string $password,
         private array $roles,
     ) {
@@ -28,9 +28,9 @@ class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->roles;
     }
 
-    public function getFullName(): string
+    public function getPseudo(): string
     {
-        return $this->fullName;
+        return $this->pseudo;
     }
 
     public function getSalt(): ?string

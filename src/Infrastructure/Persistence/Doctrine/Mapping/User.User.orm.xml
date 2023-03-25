@@ -4,9 +4,10 @@
     name="App\Domain\User\User"
     table="`user`">
     <id name="uuid" type="guid" column="uuid"/>
-    <field name="fullName" type="string" column="full_name" nullable="false"/>
+    <field name="pseudo" type="string" column="pseudo" nullable="false" length="100"/>
     <field name="email" type="string" column="email" nullable="false"/>
     <field name="password" type="string" column="password" nullable="false"/>
+    <many-to-many field="groups" mapped-by="users" target-entity="App\Domain\User\Group"/>
     <unique-constraints>
         <unique-constraint columns="email" name="user_email" />
     </unique-constraints>

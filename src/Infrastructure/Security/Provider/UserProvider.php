@@ -29,7 +29,7 @@ final class UserProvider implements UserProviderInterface
         return new SymfonyUser(
             $user->getUuid(),
             $user->getEmail(),
-            $user->getFullName(),
+            $user->getPseudo(),
             $user->getPassword(),
             ['ROLE_USER'],
         );
