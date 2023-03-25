@@ -1,5 +1,5 @@
 # Edgar
-[![CI](https://github.com/mmarchois/edgar/actions/workflows/ci.yml/badge.svg)](https://github.com/MTES-MCT/edgar/actions/workflows/ci.yml)
+[![CI](https://github.com/mmarchois/edgar/actions/workflows/ci.yml/badge.svg)](https://github.com/mmarchois/edgar/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/mmarchois/edgar/branch/master/graph/badge.svg?token=q79Foe8xkl)](https://codecov.io/gh/mmarchois/edgar)
 
 Assistant personnel vous permettant de gérer vos courses en groupe.
