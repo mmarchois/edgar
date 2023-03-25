@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity
+    name="App\Domain\Shopping\ShoppingItem"
+    table="shopping_item">
+    <id name="uuid" type="guid" column="uuid"/>
+    <field name="name" type="string" column="name" nullable="false" length="100" />
+    <field name="quantity" type="integer" column="quantity" nullable="false">
+        <options>
+            <option name="default">1</option>
+        </options>
+    </field>
+    <field name="bought" type="boolean" column="bought" nullable="false">
+        <options>
+            <option name="default">false</option>
+        </options>
+    </field>
+    <field name="comment" type="string" column="comment" nullable="true"/>
+    <field name="unit" type="string" column="unit" nullable="true" length="5"/>
+    <field name="price" type="integer" column="price" nullable="true">
+        <options>
+            <option name="comment">Store in cents.</option>
+        </options>
+    </field>
+    <many-to-one field="shoppingCategory" target-entity="App\Domain\Shopping\ShoppingCategory">
+        <join-column name="shopping_category_uuid" referenced-column-name="uuid" on-delete="CASCADE"/>
+    </many-to-one>
+    <many-to-one field="shoppingList" target-entity="App\Domain\Shopping\ShoppingList">
+        <join-column name="shopping_list_uuid" referenced-column-name="uuid" on-delete="CASCADE"/>
+    </many-to-one>
+    <many-to-one field="user" target-entity="App\Domain\User\User">
+        <join-column name="user_uuid" referenced-column-name="uuid" on-delete="CASCADE"/>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

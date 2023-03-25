@@ -62,9 +62,9 @@ rm: ## Remove containers
 ##
 
 dbinstall: ## Setup databases
-	# make dbmigrate
+	make dbmigrate
 	make console CMD="doctrine:database:create --env=test --if-not-exists"
-	# make dbmigrate ARGS="--env=test"
+	make dbmigrate ARGS="--env=test"
 	# make dbfixtures
 
 dbmigration: ## Generate new db migration
@@ -129,7 +129,7 @@ check: ## Run checks
 	make php_lint ARGS="--dry-run"
 	make twig_lint
 	make phpstan
-	# ${BIN_CONSOLE} doctrine:schema:validate
+	${BIN_CONSOLE} doctrine:schema:validate
 
 format: php_lint ## Format code
 

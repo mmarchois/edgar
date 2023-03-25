@@ -6,9 +6,11 @@ namespace App\Domain\User;
 
 class User
 {
+    private iterable $groups = [];
+
     public function __construct(
         private string $uuid,
-        private string $fullName,
+        private string $pseudo,
         private string $email,
         private string $password,
     ) {
@@ -19,9 +21,9 @@ class User
         return $this->uuid;
     }
 
-    public function getFullName(): string
+    public function getPseudo(): string
     {
-        return $this->fullName;
+        return $this->pseudo;
     }
 
     public function getEmail(): string
@@ -32,5 +34,10 @@ class User
     public function getPassword(): string
     {
         return $this->password;
+    }
+
+    public function getGroups(): iterable
+    {
+        return $this->groups;
     }
 }
