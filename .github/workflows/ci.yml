@@ -1,0 +1,44 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgresql:
+        image: postgis/postgis:14-3.3-alpine
+        env:
+          POSTGRES_USER: edgar
+          POSTGRES_PASSWORD: edgar
+          POSTGRES_DB: edgar
+        ports:
+          - 5432:5432
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Init CI environment variables
+        # HACK: Symfony won't read from 'env: { DATABASE_URL: ... }', so we need to edit
+        # .env directly.
+        run: |
+          echo "DATABASE_URL=postgresql://edgar:edgar@localhost:5432/edgar" >> .env
+
+      - name: CI
+        run: make ci BIN_PHP="php" NPM="npm" BIN_CONSOLE="php bin/console" BIN_COMPOSER="composer"
+
+      - uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage.xml
