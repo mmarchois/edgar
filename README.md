@@ -2,7 +2,7 @@
 [![CI](https://github.com/mmarchois/edgar/actions/workflows/ci.yml/badge.svg)](https://github.com/mmarchois/edgar/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/mmarchois/edgar/branch/master/graph/badge.svg?token=q79Foe8xkl)](https://codecov.io/gh/mmarchois/edgar)
 
-Edgar, assistant personnel qui vous simplifie vos courses.
+Edgar, assistant personnel qui simplifie vos courses.
 
 ## Environnement technique
 
