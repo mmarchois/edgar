@@ -38,5 +38,6 @@ final class ShoppingItemTest extends TestCase
         $this->assertSame(2, $item->getQuantity());
         $this->assertSame(1000, $item->getPrice());
         $this->assertSame(false, $item->isBought());
+        $this->assertSame('kg', $item->getUnit());
     }
 }
