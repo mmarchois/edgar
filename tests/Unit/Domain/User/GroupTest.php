@@ -25,5 +25,6 @@ final class GroupTest extends TestCase
         $this->assertSame($start, $group->getStartDate());
         $this->assertSame($end, $group->getEndDate());
         $this->assertSame([], $group->getUsers()); // Set by Doctrine
+        $this->assertSame([], $group->getCards()); // Set by Doctrine
     }
 }

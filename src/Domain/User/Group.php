@@ -7,6 +7,7 @@ namespace App\Domain\User;
 class Group
 {
     private iterable $users = [];
+    private iterable $cards = [];
 
     public function __construct(
         private string $uuid,
@@ -39,5 +40,10 @@ class Group
     public function getUsers(): iterable
     {
         return $this->users;
+    }
+
+    public function getCards(): iterable
+    {
+        return $this->cards;
     }
 }
