@@ -1,8 +1,8 @@
-# Edgar
+# Edgar, les courses différemment.
+
 [![CI](https://github.com/mmarchois/edgar/actions/workflows/ci.yml/badge.svg)](https://github.com/mmarchois/edgar/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/mmarchois/edgar/branch/main/graph/badge.svg?token=q79Foe8xkl)](https://codecov.io/gh/mmarchois/edgar)
 
-Edgar, assistant personnel qui simplifie vos courses.
 
 ## Environnement technique
 
@@ -32,3 +32,7 @@ make start
 ## Contribuer
 
 Consultez [la documentation de développement](./docs/README.md).
+
+## Crédits
+
+Créé par [Mathieu MARCHOIS](https://twitter.com/mmarchois).
