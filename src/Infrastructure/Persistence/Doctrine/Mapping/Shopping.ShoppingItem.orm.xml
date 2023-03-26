@@ -23,13 +23,13 @@
         </options>
     </field>
     <many-to-one field="shoppingCategory" target-entity="App\Domain\Shopping\ShoppingCategory">
-        <join-column name="shopping_category_uuid" referenced-column-name="uuid" on-delete="CASCADE"/>
+        <join-column name="shopping_category_uuid" referenced-column-name="uuid" on-delete="CASCADE" nullable="false"/>
     </many-to-one>
     <many-to-one field="shoppingList" target-entity="App\Domain\Shopping\ShoppingList">
-        <join-column name="shopping_list_uuid" referenced-column-name="uuid" on-delete="CASCADE"/>
+        <join-column name="shopping_list_uuid" referenced-column-name="uuid" on-delete="CASCADE" nullable="false"/>
     </many-to-one>
     <many-to-one field="user" target-entity="App\Domain\User\User">
-        <join-column name="user_uuid" referenced-column-name="uuid" on-delete="CASCADE"/>
+        <join-column name="user_uuid" referenced-column-name="uuid" on-delete="CASCADE" nullable="false"/>
     </many-to-one>
   </entity>
 </doctrine-mapping>

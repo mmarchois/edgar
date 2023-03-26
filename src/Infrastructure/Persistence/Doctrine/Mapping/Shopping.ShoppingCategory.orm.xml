@@ -4,7 +4,7 @@
     name="App\Domain\Shopping\ShoppingCategory"
     table="shopping_category">
     <id name="uuid" type="guid" column="uuid"/>
-    <field name="name" type="string" column="name" nullable="false"/>
+    <field name="name" type="string" column="name" nullable="false" length="100"/>
     <field name="position" type="integer" column="position" nullable="false"/>
    </entity>
 </doctrine-mapping>

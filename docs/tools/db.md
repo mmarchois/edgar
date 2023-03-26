@@ -1,5 +1,63 @@
 # Base de données
 
+## MCD
+
+
+Le diagramme ci-dessous sera modifié au fur et à mesure de l'évolution du MCD.
+
+```mermaid
+classDiagram
+direction LR
+
+class User {
+    uuid*: uuid
+    pseudo: varchar[100]
+    email: varchar[255]
+    password: varchar[255]
+}
+
+class Group {
+    uuid*: uuid
+    name: varchar[100]
+    startDate: datetime
+    endDate?: datetime
+}
+
+class ShoppingList {
+    uuid*: uuid
+    name: varchar[100]
+}
+
+class ShoppingCategory {
+    uuid*: uuid
+    name: varchar[100]
+    position: integer
+}
+
+class ShoppingItem {
+    uuid*: uuid
+    name: varchar[100]
+    bought: boolean
+    quantity: integer
+    comment?: varchar[255]
+    unit?: varchar[5]
+    price?: integer
+}
+
+class Card {
+    uuid*: uuid
+    code: varchar[100]
+    name: varchar[100]
+}
+
+User "1..N" -- "1..N" Group : user_group
+Group " 1..N" -- "1..1" ShoppingList
+ShoppingList "1..N" -- "1..1" ShoppingItem
+ShoppingItem "1..1" -- "1..N" ShoppingCategory
+Card "1..N" -- "1..N" Group : card_group
+Card "1..1" -- "1..N" User
+```
+
 ## Connexion
 
 Pour se connecter au client PostgreSQL, utilisez la commande :

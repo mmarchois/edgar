@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Shopping;
 
+use App\Domain\Card\Card;
 use App\Domain\User\Group;
 
 class ShoppingList
@@ -12,6 +13,7 @@ class ShoppingList
         private string $uuid,
         private string $name,
         private Group $group,
+        private ?Card $card,
     ) {
     }
 
@@ -28,5 +30,10 @@ class ShoppingList
     public function getGroup(): Group
     {
         return $this->group;
+    }
+
+    public function getCard(): ?Card
+    {
+        return $this->card;
     }
 }
