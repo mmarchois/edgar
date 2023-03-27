@@ -6,6 +6,46 @@
                 <source>common.title</source>
                 <target>Edgar, vos courses différemment</target>
             </trans-unit>
+            <trans-unit id="login.title">
+                <source>login.title</source>
+                <target>Bonjour !</target>
+            </trans-unit>
+            <trans-unit id="login.meta.title">
+                <source>login.meta.title</source>
+                <target>Se connecter</target>
+            </trans-unit>
+            <trans-unit id="login.subtitle">
+                <source>login.subtitle</source>
+                <target>Content de vous revoir ! Remplissez le formulaire pour pouvoir vous connecter.</target>
+            </trans-unit>
+            <trans-unit id="login.email">
+                <source>login.email</source>
+                <target>Adresse e-mail</target>
+            </trans-unit>
+            <trans-unit id="login.email.placeholder">
+                <source>login.email.placeholder</source>
+                <target>Entrez votre adresse e-mail</target>
+            </trans-unit>
+            <trans-unit id="login.password">
+                <source>login.password</source>
+                <target>Mot de passe</target>
+            </trans-unit>
+            <trans-unit id="login.password.placeholder">
+                <source>login.password.placeholder</source>
+                <target>Entrez votre mot de passe</target>
+            </trans-unit>
+            <trans-unit id="login.submit">
+                <source>login.submit</source>
+                <target>Se connecter</target>
+            </trans-unit>
+            <trans-unit id="login.register">
+                <source>login.register</source>
+                <target>Inscrivez-vous</target>
+            </trans-unit>
+            <trans-unit id="login.login.forgot_password">
+                <source>login.forgot_password</source>
+                <target>Mot de passe oublié ?</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

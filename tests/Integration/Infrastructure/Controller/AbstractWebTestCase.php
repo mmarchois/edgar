@@ -21,7 +21,7 @@ abstract class AbstractWebTestCase extends WebTestCase
             new SymfonyUser(
                 $testUser->getUuid(),
                 $testUser->getEmail(),
-                $testUser->getFullName(),
+                $testUser->getPseudo(),
                 $testUser->getPassword(),
                 ['ROLE_USER'],
             )
