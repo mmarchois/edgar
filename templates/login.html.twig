@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'login.meta.title'|trans }} - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="section mt-3 text-center">
+        <h1>{{ 'login.title'|trans }}</h1>
+        <h4>{{ 'login.subtitle'|trans }}</h4>
+    </div>
+    <div class="section p-2">
+        {% if error %}
+            <div class="alert alert-danger mb-2" role="alert">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+        <form action="{{ path('app_login') }}" method="post">
+            <div class="card">
+                <div class="card-body pb-1">
+                    <div class="form-group basic">
+                        <div class="input-wrapper">
+                            <label class="label" for="email1">{{ 'login.email'|trans }}</label>
+                            <input class="form-control" placeholder="{{ 'login.email.placeholder'|trans }}" type="email" autocomplete="email" id="username" required name="_username" value="{{ last_username }}"/>
+                        </div>
+                    </div>
+                    <div class="form-group basic">
+                        <div class="input-wrapper">
+                            <label class="label" for="password1">{{ 'login.password'|trans }}</label>
+                            <input class="form-control" aria-required="true" placeholder="{{ 'login.password.placeholder'|trans }}" required name="_password" autocomplete="off" id="password" type="password"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-links mt-2">
+                <div>
+                    <a href="app-register.html">{{ 'login.register'|trans }}</a>
+                </div>
+                <div>
+                    <a href="app-forgot-password.html" class="text-muted">{{ 'login.forgot_password'|trans }}</a>
+                </div>
+            </div>
+            <div class="mt-2">
+                <button type="submit" class="btn btn-primary btn-block btn-lg">{{ 'login.submit'|trans }}</button>
+            </div>
+            <input type="hidden" name="_target_path" value="{{ path('app_dashboard') }}">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        </form>
+    </div>
+{% endblock %}

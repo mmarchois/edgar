@@ -24,6 +24,8 @@
     <div id="appCapsule">
         {% block body %}{% endblock %}
     </div>
-    {% include 'common/_footer.html.twig' %}
+    {% if app.user %}
+        {% include 'common/_footer.html.twig' %}
+    {% endif %}
   </body>
 </html>
