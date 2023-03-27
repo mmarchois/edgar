@@ -1,36 +1,29 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"/>
+    <link rel="icon" href="{{ asset('images/icons/favicon.png') }}" type="image/svg+xml">
+    <link rel="manifest" href="{{ asset('manifest.json') }}" crossorigin="use-credentials">
     {% set _nonce = csp_nonce('script') %}
     {% set _nonce = csp_nonce('style') %}
     <meta name="csp-nonce" content="{{ _nonce }}">
-
     <title>{% block title %}{{ 'common.title'|trans }}{% endblock %}</title>
-
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
-
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     {% endblock %}
   </head>
   <body>
-
-    {% for label, messages in app.flashes %}
-        {% if loop.first %}<div class="fr-container fr-mt-4w">{% endif %}
-        {% for message in messages %}
-            <div class="fr-alert fr-alert--{{ label }}">
-                {{ message|raw }}
-            </div>
-        {% endfor %}
-    {% if loop.last %}</div>{% endif %}
-    {% endfor %}
-
-    <main id="contenu">
+    {% include 'common/_header.html.twig' %}
+    <div id="appCapsule">
         {% block body %}{% endblock %}
-    </main>
+    </div>
+    {% include 'common/_footer.html.twig' %}
   </body>
 </html>

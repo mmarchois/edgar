@@ -1,5 +1,102 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Home</h1>
+    <div class="section wallet-card-section pt-1">
+        <div class="wallet-card">
+            <!-- Balance -->
+            <div class="balance">
+                <div class="left">
+                    <span class="title">Bonjour Mathieu !</span>
+                    <h1 class="total">$ 2,562.50</h1>
+                </div>
+                <div class="right">
+                    <a href="#" class="button" data-bs-toggle="modal" data-bs-target="#depositActionSheet">
+                        <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            <!-- * Balance -->
+            <!-- Wallet Footer -->
+            <div class="wallet-footer">
+                <div class="item">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#withdrawActionSheet">
+                        <div class="icon-wrapper bg-danger">
+                            <ion-icon name="arrow-down-outline" role="img" class="md hydrated" aria-label="arrow down outline"></ion-icon>
+                        </div>
+                        <strong>Withdraw</strong>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#sendActionSheet">
+                        <div class="icon-wrapper">
+                            <ion-icon name="arrow-forward-outline" role="img" class="md hydrated" aria-label="arrow forward outline"></ion-icon>
+                        </div>
+                        <strong>Send</strong>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="app-cards.html">
+                        <div class="icon-wrapper bg-success">
+                            <ion-icon name="card-outline" role="img" class="md hydrated" aria-label="card outline"></ion-icon>
+                        </div>
+                        <strong>Cards</strong>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exchangeActionSheet">
+                        <div class="icon-wrapper bg-warning">
+                            <ion-icon name="swap-vertical" role="img" class="md hydrated" aria-label="swap vertical"></ion-icon>
+                        </div>
+                        <strong>Exchange</strong>
+                    </a>
+                </div>
+
+            </div>
+            <!-- * Wallet Footer -->
+        </div>
+    </div>
+
+    <div class="section mt-2">
+        <div class="section-heading">
+            <h2 class="title">Mes listes</h2>
+            <a href="app-blog.html" class="link">Voir tout</a>
+        </div>
+        <div class="goals">
+            <!-- item -->
+            <div class="item">
+                <div class="in">
+                    <div>
+                        <h4>Leclerc</h4>
+                        <p>
+                            <ion-icon name="people-outline" role="img" class="md hydrated" aria-label="people outline"></ion-icon>
+                            H&M
+                        </p>
+                    </div>
+                    <div class="price">2/30</div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <!-- * item -->
+            <!-- item -->
+            <div class="item">
+                <div class="in">
+                    <div>
+                        <h4>Franprix</h4>
+                        <p>
+                            <ion-icon name="people-outline" role="img" class="md hydrated" aria-label="people outline"></ion-icon>
+                            Grande maison
+                        </p>
+                    </div>
+                    <div class="price">1/10</div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <!-- * item -->
+        </div>
+    </div>
+
 {% endblock %}

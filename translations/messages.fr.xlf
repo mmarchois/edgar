@@ -4,9 +4,8 @@
         <body>
             <trans-unit id="common.title">
                 <source>common.title</source>
-                <target>Edgar</target>
+                <target>Edgar, vos courses différemment</target>
             </trans-unit>
-
         </body>
     </file>
 </xliff>

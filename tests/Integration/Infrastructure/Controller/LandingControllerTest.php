@@ -13,6 +13,6 @@ final class LandingControllerTest extends AbstractWebTestCase
 
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
-        $this->assertSame('Home', $crawler->filter('h1')->text());
+        $this->assertSame('Mes listes', $crawler->filter('h2')->text());
     }
 }
