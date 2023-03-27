@@ -6,7 +6,7 @@ namespace App\Domain\Card;
 
 use App\Domain\User\User;
 
-class Card
+final class Card
 {
     private iterable $groups = [];
 

@@ -6,7 +6,7 @@
     <id name="uuid" type="guid" column="uuid"/>
     <field name="name" type="string" column="name" nullable="false" length="100" />
     <many-to-one field="group" target-entity="App\Domain\User\Group">
-        <join-column name="group_uuid" referenced-column-name="uuid" on-delete="CASCADE" nullable="false"/>
+        <join-column name="group_uuid" referenced-column-name="uuid" on-delete="CASCADE" nullable="true"/>
     </many-to-one>
     <many-to-one field="card" target-entity="App\Domain\Card\Card">
         <join-column name="card_uuid" referenced-column-name="uuid" on-delete="SET NULL" nullable="true"/>

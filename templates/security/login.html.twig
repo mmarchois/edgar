@@ -18,23 +18,23 @@
                     <div class="form-group basic">
                         <div class="input-wrapper">
                             <label class="label" for="email1">{{ 'login.email'|trans }}</label>
-                            <input class="form-control" placeholder="{{ 'login.email.placeholder'|trans }}" type="email" autocomplete="email" id="username" required name="_username" value="{{ last_username }}"/>
+                            <input class="form-control" placeholder="{{ 'login.email.placeholder'|trans }}" type="email" autocomplete="email" id="email" required name="email" value="{{ last_username }}"/>
                         </div>
                     </div>
                     <div class="form-group basic">
                         <div class="input-wrapper">
                             <label class="label" for="password1">{{ 'login.password'|trans }}</label>
-                            <input class="form-control" aria-required="true" placeholder="{{ 'login.password.placeholder'|trans }}" required name="_password" autocomplete="off" id="password" type="password"/>
+                            <input class="form-control" aria-required="true" placeholder="{{ 'login.password.placeholder'|trans }}" required name="password" autocomplete="off" id="password" type="password"/>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="form-links mt-2">
                 <div>
-                    <a href="app-register.html">{{ 'login.register'|trans }}</a>
+                    <a href="{{ path('app_register') }}">{{ 'login.register'|trans }}</a>
                 </div>
                 <div>
-                    <a href="app-forgot-password.html" class="text-muted">{{ 'login.forgot_password'|trans }}</a>
+                    <a href="#" class="text-muted">{{ 'login.forgot_password'|trans }}</a>
                 </div>
             </div>
             <div class="mt-2">
