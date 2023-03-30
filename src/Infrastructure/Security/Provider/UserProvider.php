@@ -26,13 +26,7 @@ final class UserProvider implements UserProviderInterface
             throw new UserNotFoundException(sprintf('Unable to find the user %s', $identifier));
         }
 
-        return new SymfonyUser(
-            $user->getUuid(),
-            $user->getEmail(),
-            $user->getPseudo(),
-            $user->getPassword(),
-            ['ROLE_USER'],
-        );
+        return new SymfonyUser($user);
     }
 
     public function refreshUser(UserInterface $user): UserInterface

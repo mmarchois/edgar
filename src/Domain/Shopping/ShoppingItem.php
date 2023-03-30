@@ -6,7 +6,7 @@ namespace App\Domain\Shopping;
 
 use App\Domain\User\User;
 
-class ShoppingItem
+final class ShoppingItem
 {
     public function __construct(
         private string $uuid,

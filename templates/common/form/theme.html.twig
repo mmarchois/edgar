@@ -1,0 +1,27 @@
+{% use "form_div_layout.html.twig" %}
+
+{% block form_row %}
+    <div class="form-group basic">
+        <div class="input-wrapper">
+            {{- form_label(form) -}}
+            {{- form_widget(form, { attr: { class: 'form-control'}}) -}}
+            {{- form_errors(form) -}}
+        </div>
+    </div>
+{% endblock form_row %}
+
+{% block form_label %}
+    {%- set label_class = (label_attr.class|default('') ~ ' label')|trim -%}
+    {%- set label_attr = label_attr|merge({class: label_class}) -%}
+    {{ parent() }}
+{% endblock %}
+
+{% block form_errors %}
+    {% if errors|length > 0 %}
+        <div class="invalid-feedback" id="{{ id }}_error">
+            {%- for error in errors -%}
+                {{ error.message }}
+            {%- endfor -%}
+        </div>
+    {% endif %}
+{% endblock form_errors %}

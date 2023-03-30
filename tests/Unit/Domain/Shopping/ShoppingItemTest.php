@@ -39,5 +39,6 @@ final class ShoppingItemTest extends TestCase
         $this->assertSame(1000, $item->getPrice());
         $this->assertSame(false, $item->isBought());
         $this->assertSame('kg', $item->getUnit());
+        $this->assertSame('Penser à regarder dans le rayon bio', $item->getComent());
     }
 }

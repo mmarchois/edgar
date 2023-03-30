@@ -17,15 +17,7 @@ abstract class AbstractWebTestCase extends WebTestCase
         $client = static::createClient();
         $userRepository = static::getContainer()->get(UserRepository::class);
         $testUser = $userRepository->findOneByEmail($email);
-        $client->loginUser(
-            new SymfonyUser(
-                $testUser->getUuid(),
-                $testUser->getEmail(),
-                $testUser->getPseudo(),
-                $testUser->getPassword(),
-                ['ROLE_USER'],
-            )
-        );
+        $client->loginUser(new SymfonyUser($testUser));
 
         return $client;
     }

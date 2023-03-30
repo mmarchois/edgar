@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Shopping;
 
-class ShoppingCategory
+final class ShoppingCategory
 {
     public function __construct(
         private string $uuid,

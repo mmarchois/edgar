@@ -12,7 +12,7 @@
             </trans-unit>
             <trans-unit id="login.meta.title">
                 <source>login.meta.title</source>
-                <target>Se connecter</target>
+                <target>Me connecter</target>
             </trans-unit>
             <trans-unit id="login.subtitle">
                 <source>login.subtitle</source>
@@ -36,7 +36,7 @@
             </trans-unit>
             <trans-unit id="login.submit">
                 <source>login.submit</source>
-                <target>Se connecter</target>
+                <target>Me connecter</target>
             </trans-unit>
             <trans-unit id="login.register">
                 <source>login.register</source>
@@ -45,6 +45,58 @@
             <trans-unit id="login.login.forgot_password">
                 <source>login.forgot_password</source>
                 <target>Mot de passe oublié ?</target>
+            </trans-unit>
+            <trans-unit id="register.title">
+                <source>register.title</source>
+                <target>Enchanté !</target>
+            </trans-unit>
+            <trans-unit id="register.subtitle">
+                <source>register.subtitle</source>
+                <target>Remplissez le formulaire pour pouvoir créer votre compte, gratuitement, en 1min.</target>
+            </trans-unit>
+            <trans-unit id="register.meta.title">
+                <source>register.meta.title</source>
+                <target>Créer mon compte</target>
+            </trans-unit>
+            <trans-unit id="register.already_have_an_account">
+                <source>register.already_have_an_account</source>
+                <target>Déjà un compte ?</target>
+            </trans-unit>
+            <trans-unit id="register.submit">
+                <source>register.submit</source>
+                <target>Créer mon compte</target>
+            </trans-unit>
+            <trans-unit id="register.form.pseudo">
+                <source>register.form.pseudo</source>
+                <target>Pseudo</target>
+            </trans-unit>
+            <trans-unit id="register.form.pseudo.placeholder">
+                <source>register.form.pseudo.placeholder</source>
+                <target>Entrez votre pseudo</target>
+            </trans-unit>
+            <trans-unit id="register.form.email">
+                <source>register.form.email</source>
+                <target>Adresse e-mail</target>
+            </trans-unit>
+            <trans-unit id="register.form.email.placeholder">
+                <source>register.form.email.placeholder</source>
+                <target>Entrez votre adresse e-mail</target>
+            </trans-unit>
+            <trans-unit id="register.form.password">
+                <source>register.form.password</source>
+                <target>Mot de passe</target>
+            </trans-unit>
+            <trans-unit id="register.form.password.placeholder">
+                <source>register.form.password.placeholder</source>
+                <target>Entrez votre mot de passe</target>
+            </trans-unit>
+            <trans-unit id="register.form.password.confirm">
+                <source>register.form.password.confirm</source>
+                <target>Confirmation du mot de passe</target>
+            </trans-unit>
+            <trans-unit id="register.form.password.confirm.placeholder">
+                <source>register.form.password.confirm.placeholder</source>
+                <target>Entrez votre mot de passe</target>
             </trans-unit>
         </body>
     </file>

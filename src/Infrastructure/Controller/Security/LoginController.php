@@ -24,7 +24,7 @@ final class LoginController
 
         return new Response(
             $this->twig->render(
-                name: 'login.html.twig',
+                name: 'security/login.html.twig',
                 context: [
                     'last_username' => $lastUsername,
                     'error' => $error,

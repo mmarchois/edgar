@@ -120,13 +120,13 @@ php_lint: ## PHP linter
 twig_lint: ## Twig linter
 	${BIN_CONSOLE} lint:twig -n
 
-security_check: ## Security checks
-	${_SYMFONY} security:check
-
+psr_lint: ## Check PSR autoloading
+	${BIN_COMPOSER} dump-autoload --strict-psr
 # All-in-one commands
 
 check: ## Run checks
 	make php_lint ARGS="--dry-run"
+	make psr_lint
 	make twig_lint
 	make phpstan
 	${BIN_CONSOLE} doctrine:schema:validate

@@ -9,12 +9,16 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            # by default, the feature allows 5 login attempts per minute
+            login_throttling: ~
             lazy: true
             provider: user
             form_login:
                 login_path: app_login
                 check_path: app_login
                 enable_csrf: true
+                username_parameter: email
+                password_parameter: password
             logout:
                 path: app_logout
     access_control:

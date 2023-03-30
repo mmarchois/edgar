@@ -16,13 +16,14 @@ final class LoginControllerTest extends AbstractWebTestCase
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
         $this->assertSame('Bonjour !', $crawler->filter('h1')->text());
-        $this->assertMetaTitle("Se connecter - Edgar, vos courses différemment", $crawler);
-        $saveButton = $crawler->selectButton('Se connecter');
-        $form = $saveButton->form();
+        $this->assertMetaTitle("Me connecter - Edgar, vos courses différemment", $crawler);
 
-        $form["_username"] = "mathieu.marchois@gmail.com";
-        $form["_password"] = "password";
+        $saveButton = $crawler->selectButton('Me connecter');
+        $form = $saveButton->form();
+        $form["email"] = "mathieu.marchois@gmail.com";
+        $form["password"] = "password";
         $client->submit($form);
+
         $this->assertResponseStatusCodeSame(302);
         $client->followRedirect();
         $this->assertResponseStatusCodeSame(200);
@@ -36,10 +37,10 @@ final class LoginControllerTest extends AbstractWebTestCase
 
         $this->assertResponseStatusCodeSame(200);
 
-        $saveButton = $crawler->selectButton('Se connecter');
+        $saveButton = $crawler->selectButton('Me connecter');
         $form = $saveButton->form();
-        $form["_username"] = "mathieu@fairness.coop";
-        $form["_password"] = "password";
+        $form["email"] = "mathieu@fairness.coop";
+        $form["password"] = "password";
 
         $client->submit($form);
         $this->assertResponseStatusCodeSame(302);
