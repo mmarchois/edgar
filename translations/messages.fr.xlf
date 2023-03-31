@@ -4,7 +4,15 @@
         <body>
             <trans-unit id="common.title">
                 <source>common.title</source>
+                <target>Edgar Majordome</target>
+            </trans-unit>
+            <trans-unit id="common.baseline">
+                <source>common.baseline</source>
                 <target>Edgar, vos courses différemment</target>
+            </trans-unit>
+            <trans-unit id="common.submit">
+                <source>common.submit</source>
+                <target>Valider</target>
             </trans-unit>
             <trans-unit id="login.title">
                 <source>login.title</source>
@@ -97,6 +105,18 @@
             <trans-unit id="register.form.password.confirm.placeholder">
                 <source>register.form.password.confirm.placeholder</source>
                 <target>Entrez votre mot de passe</target>
+            </trans-unit>
+            <trans-unit id="shoppingList.save.title">
+                <source>shoppingList.save.title</source>
+                <target>Nouvelle liste</target>
+            </trans-unit>
+            <trans-unit id="shoppingList.form.name">
+                <source>shoppingList.form.name</source>
+                <target>Nom de la liste</target>
+            </trans-unit>
+            <trans-unit id="shoppingList.form.name.placeholder">
+                <source>shoppingList.form.name.placeholder</source>
+                <target>Ex: Leclerc</target>
             </trans-unit>
         </body>
     </file>
