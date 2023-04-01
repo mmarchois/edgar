@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Controller\App;
+namespace App\Infrastructure\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,9 +14,9 @@ final class DashboardController
     ) {
     }
 
-    #[Route('/', name: 'app_dashboard', methods: ['GET'])]
+    #[Route('/dashboard', name: 'app_dashboard', methods: ['GET'])]
     public function __invoke(): Response
     {
-        return new Response($this->twig->render('app/index.html.twig'));
+        return new Response($this->twig->render('dashboard.html.twig'));
     }
 }

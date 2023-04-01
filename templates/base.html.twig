@@ -9,7 +9,7 @@
     {% set _nonce = csp_nonce('script') %}
     {% set _nonce = csp_nonce('style') %}
     <meta name="csp-nonce" content="{{ _nonce }}">
-    <title>{% block title %}{{ 'common.title'|trans }}{% endblock %}</title>
+    <title>{% block title 'common.baseline'|trans %}</title>
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
@@ -20,7 +20,18 @@
     {% endblock %}
   </head>
   <body>
-    {% include 'common/_header.html.twig' %}
+    {% set currentRouteName = app.request.get('_route') %}
+    {% set isHeaderBgPrimary = currentRouteName  == 'app_dashboard' or currentRouteName  == 'app_landing' %}
+
+    <div class="appHeader {% if isHeaderBgPrimary %} bg-primary text-light{% endif %}">
+        <div class="left">
+            <a href="#" class="headerButton" data-bs-toggle="modal" data-bs-target="#sidebarPanel">
+                <ion-icon name="menu-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">{% block navTitle 'common.title'|trans %}</div>
+        <div class="right"></div>
+    </div>
     <div id="appCapsule">
         {% block body %}{% endblock %}
     </div>

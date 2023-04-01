@@ -6,14 +6,16 @@ namespace App\Domain\Shopping;
 
 use App\Domain\Card\Card;
 use App\Domain\User\Group;
+use App\Domain\User\User;
 
 final class ShoppingList
 {
     public function __construct(
         private string $uuid,
         private string $name,
-        private ?Group $group,
-        private ?Card $card,
+        private User $user,
+        private ?Group $group = null,
+        private ?Card $card = null,
     ) {
     }
 
@@ -35,5 +37,10 @@ final class ShoppingList
     public function getCard(): ?Card
     {
         return $this->card;
+    }
+
+    public function getUser(): User
+    {
+        return $this->user;
     }
 }

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ 'shoppingList.save.title'|trans }} - {{ parent() }}{% endblock %}
+{% block navTitle 'shoppingList.save.title'|trans %}
+
+{% block body %}
+    <div class="section mt-2">
+        {{ form_start(form) }}
+            <div class="card">
+                <div class="card-body">
+                    {{ form_row(form.name)}}
+                </div>
+            </div>
+            <div class="mt-2">
+                <button type="submit" class="btn btn-primary btn-block btn-lg">{{ 'common.submit'|trans }}</button>
+            </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
