@@ -118,6 +118,10 @@
                 <source>shoppingList.form.name.placeholder</source>
                 <target>Ex: Leclerc</target>
             </trans-unit>
+            <trans-unit id="shoppingList.list.title">
+                <source>shoppingList.list.title</source>
+                <target>Mes listes</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

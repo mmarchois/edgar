@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'shoppingList.list.title'|trans }} - {{ parent() }}{% endblock %}
+{% block navTitle 'shoppingList.list.title'|trans %}
+
+{% block navRight %}
+    <a href="{{ path('app_shoppinglists_save') }}" class="headerButton">
+        <ion-icon name="add-circle-outline"></ion-icon>
+    </a>
+{% endblock %}
+
+{% block body %}
+    <div class="section mt-2">
+        <div class="goals">
+            {% for shoppingList in shoppingLists %}
+                <div class="item">
+                    <a href="">
+                        <div class="in">
+                            <div>
+                                <h4>{{ shoppingList.name }}</h4>
+                                <p>
+                                    <ion-icon name="people-outline" role="img" class="md hydrated" aria-label="people outline"></ion-icon>
+                                    hmarchois, T&C
+                                </p>
+                            </div>
+                            <div class="price">20/30</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
