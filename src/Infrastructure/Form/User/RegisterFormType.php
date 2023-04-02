@@ -17,12 +17,22 @@ final class RegisterFormType extends AbstractType
     {
         $builder
             ->add(
-                'pseudo',
+                'firstName',
                 TextType::class,
                 options: [
-                    'label' => 'register.form.pseudo',
+                    'label' => 'register.form.firstName',
                     'attr' => [
-                        'placeholder' => 'register.form.pseudo.placeholder',
+                        'placeholder' => 'register.form.firstName.placeholder',
+                    ],
+                ],
+            )
+            ->add(
+                'lastName',
+                TextType::class,
+                options: [
+                    'label' => 'register.form.lastName',
+                    'attr' => [
+                        'placeholder' => 'register.form.lastName.placeholder',
                     ],
                 ],
             )

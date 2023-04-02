@@ -12,7 +12,6 @@ class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInterface
 {
     private string $uuid;
     private string $email;
-    private string $pseudo;
     private string $password;
     private array $roles;
 
@@ -20,7 +19,6 @@ class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->uuid = $user->getUuid();
         $this->email = $user->getEmail();
-        $this->pseudo = $user->getPseudo();
         $this->password = $user->getPassword();
         $this->roles = ['ROLE_USER'];
     }
@@ -33,11 +31,6 @@ class SymfonyUser implements UserInterface, PasswordAuthenticatedUserInterface
     public function getRoles(): array
     {
         return $this->roles;
-    }
-
-    public function getPseudo(): string
-    {
-        return $this->pseudo;
     }
 
     public function getSalt(): ?string

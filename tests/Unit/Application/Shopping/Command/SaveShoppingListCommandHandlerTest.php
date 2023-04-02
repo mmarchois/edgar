@@ -31,6 +31,10 @@ final class SaveShoppingListCommandHandlerTest extends TestCase
             ->expects(self::once())
             ->method('getUuid')
             ->willReturn('ff143a4c-3994-4e7a-8d95-60904211dc73');
+        $createdShoppingList
+            ->expects(self::once())
+            ->method('addUser')
+            ->with($user);
 
         $this->idFactory
             ->expects(self::once())
@@ -44,7 +48,7 @@ final class SaveShoppingListCommandHandlerTest extends TestCase
                 new ShoppingList(
                     uuid: 'ff143a4c-3994-4e7a-8d95-60904211dc73',
                     name: 'Leclerc H&M',
-                    user: $user,
+                    owner: $user,
                 )
             )
             ->willReturn($createdShoppingList);

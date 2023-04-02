@@ -11,16 +11,10 @@ direction LR
 
 class User {
     uuid*: uuid
-    pseudo: varchar[100]
+    firstName: varchar[100]
+    lastName: varchar[100]
     email: varchar[255]
     password: varchar[255]
-}
-
-class Group {
-    uuid*: uuid
-    name: varchar[100]
-    startDate: datetime
-    endDate?: datetime
 }
 
 class ShoppingList {
@@ -50,11 +44,10 @@ class Card {
     name: varchar[100]
 }
 
-User "1..N" -- "1..N" Group : user_group
-Group " 1..N" -- "1..1" ShoppingList
+User "1..N" -- "1..1" ShoppingList
+User "1..N" -- "1..N" ShoppingList: user_shoppinglist
 ShoppingList "1..N" -- "1..1" ShoppingItem
 ShoppingItem "1..1" -- "1..N" ShoppingCategory
-Card "1..N" -- "1..N" Group : card_group
 Card "1..1" -- "1..N" User
 ```
 

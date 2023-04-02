@@ -35,7 +35,8 @@ final class RegisterUserCommandHandler
         return $this->userRepository->save(
             new User(
                 uuid: $uuid,
-                pseudo: $registerUserCommand->pseudo,
+                firstName: $registerUserCommand->firstName,
+                lastName: $registerUserCommand->lastName,
                 email: $email,
                 password: $password,
             ),
