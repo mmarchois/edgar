@@ -12,16 +12,16 @@ final class UserFixture extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $user1 = new User(
+        $mmarchois = new User(
             '0b507871-8b5e-4575-b297-a630310fc06e',
             'Mathieu MARCHOIS',
             'mathieu.marchois@gmail.com',
             'password',
         );
 
-        $manager->persist($user1);
+        $manager->persist($mmarchois);
         $manager->flush();
 
-        $this->addReference('user1', $user1);
+        $this->addReference('mmarchois', $mmarchois);
     }
 }

@@ -6,6 +6,7 @@ namespace App\Infrastructure\Persistence\Doctrine\Repository\Shopping;
 
 use App\Domain\Shopping\Repository\ShoppingListRepositoryInterface;
 use App\Domain\Shopping\ShoppingList;
+use App\Domain\User\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -21,5 +22,15 @@ final class ShoppingListRepository extends ServiceEntityRepository implements Sh
         $this->getEntityManager()->persist($shoppingList);
 
         return $shoppingList;
+    }
+
+    public function findByUser(User $user): array
+    {
+        return $this->createQueryBuilder('s')
+            ->where('s.user = :user')
+            ->setParameter('user', $user)
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult();
     }
 }
