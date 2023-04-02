@@ -10,5 +10,5 @@ interface UserRepositoryInterface
 {
     public function findOneByEmail(string $email): ?User;
 
-    public function save(User $user): User;
+    public function add(User $user): User;
 }

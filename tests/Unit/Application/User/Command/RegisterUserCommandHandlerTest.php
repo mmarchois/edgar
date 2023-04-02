@@ -51,7 +51,7 @@ final class RegisterUserCommandHandlerTest extends TestCase
 
         $this->userRepository
             ->expects(self::once())
-            ->method('save')
+            ->method('add')
             ->with(
                 new User(
                     uuid: 'ff143a4c-3994-4e7a-8d95-60904211dc73',
@@ -101,7 +101,7 @@ final class RegisterUserCommandHandlerTest extends TestCase
 
         $this->userRepository
             ->expects(self::never())
-            ->method('save');
+            ->method('add');
 
         $handler = new RegisterUserCommandHandler(
             $this->userRepository,

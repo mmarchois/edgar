@@ -32,7 +32,7 @@ final class RegisterUserCommandHandler
         $uuid = $this->idFactory->make();
         $password = $this->passwordHasher->hash($registerUserCommand->password);
 
-        return $this->userRepository->save(
+        return $this->userRepository->add(
             new User(
                 uuid: $uuid,
                 firstName: $registerUserCommand->firstName,

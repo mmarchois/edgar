@@ -28,12 +28,20 @@ final class ShoppingListFixture extends Fixture implements DependentFixtureInter
         );
         $shoppingList2->addUser($this->getReference('mmarchois'));
 
+        $shoppingList3 = new ShoppingList(
+            'e999a808-21ee-4533-8e05-a7bdd82d5934',
+            'Aroma-Zone',
+            $this->getReference('hmarchois'),
+        );
+
         $manager->persist($shoppingList);
         $manager->persist($shoppingList2);
+        $manager->persist($shoppingList3);
         $manager->flush();
 
         $this->addReference('shoppingList', $shoppingList);
         $this->addReference('shoppingList2', $shoppingList2);
+        $this->addReference('shoppingList3', $shoppingList3);
     }
 
     public function getDependencies(): array

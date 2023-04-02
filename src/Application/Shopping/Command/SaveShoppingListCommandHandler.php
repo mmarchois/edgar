@@ -18,14 +18,21 @@ final class SaveShoppingListCommandHandler
 
     public function __invoke(SaveShoppingListCommand $command): string
     {
-        $shoppingList = $this->shoppingListRepository->save(
+        $name = trim($command->name);
+
+        if ($command->shoppingList instanceof ShoppingList) {
+            $command->shoppingList->updateName($name);
+
+            return $command->shoppingList->getUuid();
+        }
+
+        $shoppingList = $this->shoppingListRepository->add(
             new ShoppingList(
                 uuid: $this->idFactory->make(),
-                name: trim($command->name),
+                name: $name,
                 owner: $command->owner,
             ),
         );
-
         $shoppingList->addUser($command->owner);
 
         return $shoppingList->getUuid();

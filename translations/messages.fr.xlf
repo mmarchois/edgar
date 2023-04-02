@@ -114,9 +114,13 @@
                 <source>register.form.password.confirm.placeholder</source>
                 <target>Entrez votre mot de passe</target>
             </trans-unit>
-            <trans-unit id="shoppingList.save.title">
-                <source>shoppingList.save.title</source>
+            <trans-unit id="shoppingList.add.title">
+                <source>shoppingList.add.title</source>
                 <target>Nouvelle liste</target>
+            </trans-unit>
+            <trans-unit id="shoppingList.edit.title">
+                <source>shoppingList.edit.title</source>
+                <target>Renommer "%name%"</target>
             </trans-unit>
             <trans-unit id="shoppingList.form.name">
                 <source>shoppingList.form.name</source>
