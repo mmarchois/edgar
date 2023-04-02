@@ -8,7 +8,8 @@ use App\Application\CommandInterface;
 
 final class RegisterUserCommand implements CommandInterface
 {
-    public ?string $pseudo;
+    public ?string $firstName;
+    public ?string $lastName;
     public ?string $email;
     public ?string $password;
 }

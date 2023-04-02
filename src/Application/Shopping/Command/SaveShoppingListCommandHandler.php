@@ -22,9 +22,11 @@ final class SaveShoppingListCommandHandler
             new ShoppingList(
                 uuid: $this->idFactory->make(),
                 name: trim($command->name),
-                user: $command->user,
+                owner: $command->owner,
             ),
         );
+
+        $shoppingList->addUser($command->owner);
 
         return $shoppingList->getUuid();
     }

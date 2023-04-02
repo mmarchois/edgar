@@ -74,13 +74,21 @@
                 <source>register.submit</source>
                 <target>Créer mon compte</target>
             </trans-unit>
-            <trans-unit id="register.form.pseudo">
-                <source>register.form.pseudo</source>
-                <target>Pseudo</target>
+            <trans-unit id="register.form.firstName">
+                <source>register.form.firstName</source>
+                <target>Prénom</target>
             </trans-unit>
-            <trans-unit id="register.form.pseudo.placeholder">
-                <source>register.form.pseudo.placeholder</source>
-                <target>Entrez votre pseudo</target>
+            <trans-unit id="register.form.lastName">
+                <source>register.form.lastName</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="register.form.firstName.placeholder">
+                <source>register.form.firstName.placeholder</source>
+                <target>Entrez votre prénom</target>
+            </trans-unit>
+            <trans-unit id="register.form.lastName.placeholder">
+                <source>register.form.lastName.placeholder</source>
+                <target>Entrez votre nom</target>
             </trans-unit>
             <trans-unit id="register.form.email">
                 <source>register.form.email</source>

@@ -10,7 +10,7 @@ use App\Domain\User\User;
 final class SaveShoppingListCommand implements CommandInterface
 {
     public function __construct(
-        public readonly User $user,
+        public readonly User $owner,
     ) {
     }
 

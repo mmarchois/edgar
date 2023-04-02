@@ -19,10 +19,6 @@ class SymfonyUserTest extends TestCase
             ->willReturn('2d3724f1-2910-48b4-ba56-81796f6e100b');
         $user
             ->expects(self::once())
-            ->method('getPseudo')
-            ->willReturn('mmarchois');
-        $user
-            ->expects(self::once())
             ->method('getEmail')
             ->willReturn('mathieu.marchois@gmail.com');
         $user
@@ -34,7 +30,6 @@ class SymfonyUserTest extends TestCase
 
         $this->assertSame('2d3724f1-2910-48b4-ba56-81796f6e100b', $sfUser->getUuid());
         $this->assertSame(['ROLE_USER'], $sfUser->getRoles());
-        $this->assertSame('mmarchois', $sfUser->getPseudo());
         $this->assertSame(null, $sfUser->getSalt());
         $this->assertSame('mathieu.marchois@gmail.com', $sfUser->getUsername());
         $this->assertSame('mathieu.marchois@gmail.com', $sfUser->getUserIdentifier());

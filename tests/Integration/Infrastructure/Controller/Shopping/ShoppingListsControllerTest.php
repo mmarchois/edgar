@@ -24,6 +24,18 @@ final class ShoppingListsControllerTest extends AbstractWebTestCase
         $this->assertSame('Leclerc Aix', $crawler->filter('div.item')->eq(1)->filter('h4')->text());
     }
 
+    public function testListWithOtherAccount(): void
+    {
+        $client = $this->login('helene.m.maitre@gmail.com');
+        $crawler = $client->request('GET', '/shopping-lists');
+
+        $this->assertResponseStatusCodeSame(200);
+
+        $goals = $crawler->filter('div.goals');
+        $this->assertSame(1, $goals->filter('div.item')->count());
+        $this->assertSame('Leclerc Saint-Ouen', $crawler->filter('div.item')->eq(0)->filter('h4')->text());
+    }
+
     public function testWithoutAuthenticatedUser(): void
     {
         $client = static::createClient();

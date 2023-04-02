@@ -55,7 +55,8 @@ final class RegisterUserCommandHandlerTest extends TestCase
             ->with(
                 new User(
                     uuid: 'ff143a4c-3994-4e7a-8d95-60904211dc73',
-                    pseudo: 'mmarchois',
+                    firstName: 'Mathieu',
+                    lastName: 'Marchois',
                     email: 'mathieu.marchois@gmail.com',
                     password: 'hashPassword',
                 )
@@ -70,8 +71,9 @@ final class RegisterUserCommandHandlerTest extends TestCase
         );
 
         $command = new RegisterUserCommand();
-        $command->pseudo = 'mmarchois';
-        $command->email = 'Mathieu.MArchois@gmail.com';
+        $command->firstName = 'Mathieu';
+        $command->lastName = 'Marchois';
+        $command->email = '  Mathieu.MArchois@gmail.com  ';
         $command->password = 'password';
 
         $result = $handler($command);
@@ -109,7 +111,8 @@ final class RegisterUserCommandHandlerTest extends TestCase
         );
 
         $command = new RegisterUserCommand();
-        $command->pseudo = 'mmarchois';
+        $command->firstName = 'Mathieu';
+        $command->lastName = 'Marchois';
         $command->email = 'Mathieu.MArchois@gmail.com';
         $command->password = 'password';
 

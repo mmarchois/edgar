@@ -8,13 +8,11 @@ use App\Domain\User\User;
 
 final class Card
 {
-    private iterable $groups = [];
-
     public function __construct(
         private string $uuid,
         private string $name,
         private string $code,
-        private User $user,
+        private User $owner,
     ) {
     }
 
@@ -33,13 +31,8 @@ final class Card
         return $this->code;
     }
 
-    public function getUser(): User
+    public function getOwner(): User
     {
-        return $this->user;
-    }
-
-    public function getGroups(): iterable
-    {
-        return $this->groups;
+        return $this->owner;
     }
 }

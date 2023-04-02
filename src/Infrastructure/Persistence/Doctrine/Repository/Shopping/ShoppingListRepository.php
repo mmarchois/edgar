@@ -27,8 +27,9 @@ final class ShoppingListRepository extends ServiceEntityRepository implements Sh
     public function findByUser(User $user): array
     {
         return $this->createQueryBuilder('s')
-            ->where('s.user = :user')
-            ->setParameter('user', $user)
+            ->innerJoin('s.owner', 'o')
+            ->innerJoin('s.users', 'u', 'WITH', 'u.uuid = :uuid')
+            ->setParameter('uuid', $user->getUuid())
             ->setMaxResults(10)
             ->getQuery()
             ->getResult();
