@@ -17,11 +17,25 @@ final class ShoppingListRepository extends ServiceEntityRepository implements Sh
         parent::__construct($registry, ShoppingList::class);
     }
 
-    public function save(ShoppingList $shoppingList): ShoppingList
+    public function add(ShoppingList $shoppingList): ShoppingList
     {
         $this->getEntityManager()->persist($shoppingList);
 
         return $shoppingList;
+    }
+
+    public function findOneByUuidAndUser(string $uuid, User $user): ?ShoppingList
+    {
+        return $this->createQueryBuilder('s')
+            ->where('s.uuid = :uuid')
+            ->innerJoin('s.users', 'u', 'WITH', 'u.uuid = :userUuid')
+            ->setParameters([
+                'userUuid' => $user->getUuid(),
+                'uuid' => $uuid,
+            ])
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
     }
 
     public function findByUser(User $user): array

@@ -7,7 +7,6 @@ doctrine:
         auto_mapping: true
         mappings:
             Domain:
-                is_bundle: false
                 type: xml
                 dir: '%kernel.project_dir%/src/Infrastructure/Persistence/Doctrine/Mapping'
                 prefix: 'App\Domain'

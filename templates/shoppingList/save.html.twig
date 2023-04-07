@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
-{% block title %}{{ 'shoppingList.save.title'|trans }} - {{ parent() }}{% endblock %}
-{% block navTitle 'shoppingList.save.title'|trans %}
+
+{% set title = shoppingList
+    ? 'shoppingList.edit.title'|trans({'%name%': shoppingList.name|length > 15  ? shoppingList.name|slice(0, 15) ~ '...' : shoppingList.name})
+    : 'shoppingList.add.title'|trans
+%}
+{% block title %}{{ title }} - {{ parent() }}{% endblock %}
+{% block navTitle title %}
 {% block navLeft %}
     <a href="{{ path('app_shoppinglists') }}" class="headerButton">
         <ion-icon name="chevron-back-outline" role="img" class="md hydrated" aria-label="chevron back outline"></ion-icon>

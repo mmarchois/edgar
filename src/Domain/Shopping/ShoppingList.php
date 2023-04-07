@@ -48,4 +48,9 @@ final class ShoppingList
     {
         $this->users[] = $user;
     }
+
+    public function updateName(string $name): void
+    {
+        $this->name = $name;
+    }
 }

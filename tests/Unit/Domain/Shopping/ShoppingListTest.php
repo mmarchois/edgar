@@ -31,4 +31,20 @@ final class ShoppingListTest extends TestCase
         $this->assertSame($owner, $list->getOwner());
         $this->assertSame([$owner, $user], $list->getUsers());
     }
+
+    public function testUpdates(): void
+    {
+        $owner = $this->createMock(User::class);
+        $card = $this->createMock(Card::class);
+        $list = new ShoppingList(
+            '9cebe00d-04d8-48da-89b1-059f6b7bfe44',
+            'Leclerc',
+            $owner,
+            $card,
+        );
+        $this->assertSame('Leclerc', $list->getName());
+
+        $list->updateName('Leclerc H&M');
+        $this->assertSame('Leclerc H&M', $list->getName());
+    }
 }

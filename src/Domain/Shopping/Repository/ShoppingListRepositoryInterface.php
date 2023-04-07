@@ -9,7 +9,9 @@ use App\Domain\User\User;
 
 interface ShoppingListRepositoryInterface
 {
-    public function save(ShoppingList $shoppingList): ShoppingList;
+    public function add(ShoppingList $shoppingList): ShoppingList;
 
     public function findByUser(User $user): array;
+
+    public function findOneByUuidAndUser(string $uuid, User $user): ?ShoppingList;
 }
