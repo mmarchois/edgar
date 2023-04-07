@@ -26,6 +26,7 @@ final class ShoppingListFixture extends Fixture implements DependentFixtureInter
             'Leclerc Aix',
             $this->getReference('mmarchois'),
         );
+        $shoppingList2->addUser($this->getReference('hmarchois'));
         $shoppingList2->addUser($this->getReference('mmarchois'));
 
         $shoppingList3 = new ShoppingList(
@@ -33,6 +34,7 @@ final class ShoppingListFixture extends Fixture implements DependentFixtureInter
             'Aroma-Zone',
             $this->getReference('hmarchois'),
         );
+        $shoppingList3->addUser($this->getReference('hmarchois'));
 
         $manager->persist($shoppingList);
         $manager->persist($shoppingList2);
