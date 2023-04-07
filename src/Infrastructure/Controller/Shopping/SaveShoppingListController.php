@@ -59,7 +59,7 @@ final class SaveShoppingListController
             $shoppingListUuid = $this->commandBus->handle($command);
 
             return new RedirectResponse(
-                url: $this->router->generate('app_dashboard'),
+                url: $this->router->generate('app_shoppinglist_detail', ['uuid' => $shoppingListUuid]),
                 status: Response::HTTP_SEE_OTHER,
             );
         }

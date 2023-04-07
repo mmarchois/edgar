@@ -14,7 +14,7 @@
         <div class="goals">
             {% for shoppingList in shoppingLists %}
                 <div class="item">
-                    <a href="">
+                    <a href="{{ path('app_shoppinglist_detail', {uuid: shoppingList.uuid }) }}">
                         <div class="in">
                             <div>
                                 <h4>{{ shoppingList.name }}</h4>
