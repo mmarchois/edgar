@@ -134,6 +134,22 @@
                 <source>shoppingList.list.title</source>
                 <target>Mes listes</target>
             </trans-unit>
+            <trans-unit id="shoppingList.list.rename">
+                <source>shoppingList.list.rename</source>
+                <target>Renomer</target>
+            </trans-unit>
+            <trans-unit id="shoppingList.list.share">
+                <source>shoppingList.list.share</source>
+                <target>Partager</target>
+            </trans-unit>
+            <trans-unit id="shoppingList.list.duplicate">
+                <source>shoppingList.list.duplicate</source>
+                <target>Dupliquer</target>
+            </trans-unit>
+            <trans-unit id="shoppingList.list.delete">
+                <source>shoppingList.list.delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

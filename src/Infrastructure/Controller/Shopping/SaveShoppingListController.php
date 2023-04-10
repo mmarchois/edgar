@@ -33,7 +33,7 @@ final class SaveShoppingListController
     ) {
     }
 
-    #[Route('/shopping-lists/save/{uuid}', name: 'app_shoppinglists_save', methods: ['GET', 'POST'])]
+    #[Route('/shopping-lists/save/{uuid}', name: 'app_shoppinglist_save', methods: ['GET', 'POST'])]
     public function __invoke(Request $request, string $uuid = null): Response
     {
         $user = $this->authenticatedUser->getUser();

@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"/>
     <link rel="icon" href="{{ asset('images/icons/favicon.png') }}" type="image/svg+xml">
     <link rel="manifest" href="{{ asset('manifest.json') }}" crossorigin="use-credentials">
-    {% set _nonce = csp_nonce('script') %}
-    {% set _nonce = csp_nonce('style') %}
-    <meta name="csp-nonce" content="{{ _nonce }}">
     <title>{% block title 'common.baseline'|trans %}</title>
     {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/css/bootstrap.min.css') }}" />
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
+        <script src="{{ asset('build/js/popper.min.js') }}"></script>
+        <script src="{{ asset('build/js/bootstrap.min.js') }}"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     {% endblock %}
