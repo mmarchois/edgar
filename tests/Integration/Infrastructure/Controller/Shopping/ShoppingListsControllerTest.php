@@ -19,11 +19,16 @@ final class ShoppingListsControllerTest extends AbstractWebTestCase
         $this->assertMetaTitle("Mes listes - Edgar, vos courses différemment", $crawler);
 
         $item = $crawler->filter('div.item');
+        $shoppingLinks = $item->filter('a.shopping');
+        $editLinks = $item->filter('a.edit');
         $this->assertSame(2, $item->count());
         $this->assertSame('Leclerc Saint-Ouen', $item->eq(0)->filter('h4')->text());
-        $this->assertSame('http://localhost/shopping-lists/0b507871-8b5e-4575-b297-a630310fc06e', $item->filter('a')->eq(0)->link()->getUri());
+        $this->assertSame('http://localhost/shopping-lists/0b507871-8b5e-4575-b297-a630310fc06e', $shoppingLinks->eq(0)->link()->getUri());
+        $this->assertSame('http://localhost/shopping-lists/save/0b507871-8b5e-4575-b297-a630310fc06e', $editLinks->eq(0)->link()->getUri());
+
         $this->assertSame('Leclerc Aix', $item->eq(1)->filter('h4')->text());
-        $this->assertSame('http://localhost/shopping-lists/8c6c9813-3b58-4cb7-9056-5c432c230446', $item->filter('a')->eq(1)->link()->getUri());
+        $this->assertSame('http://localhost/shopping-lists/8c6c9813-3b58-4cb7-9056-5c432c230446', $shoppingLinks->eq(1)->link()->getUri());
+        $this->assertSame('http://localhost/shopping-lists/save/8c6c9813-3b58-4cb7-9056-5c432c230446', $editLinks->eq(1)->link()->getUri());
     }
 
     public function testHeleneList(): void
@@ -34,13 +39,18 @@ final class ShoppingListsControllerTest extends AbstractWebTestCase
         $this->assertResponseStatusCodeSame(200);
 
         $item = $crawler->filter('div.item');
+        $shoppingLinks = $item->filter('a.shopping');
+        $editLinks = $item->filter('a.edit');
         $this->assertSame(3, $item->count());
         $this->assertSame('Leclerc Saint-Ouen', $item->eq(0)->filter('h4')->text());
-        $this->assertSame('http://localhost/shopping-lists/0b507871-8b5e-4575-b297-a630310fc06e', $item->filter('a')->eq(0)->link()->getUri());
+        $this->assertSame('http://localhost/shopping-lists/0b507871-8b5e-4575-b297-a630310fc06e', $shoppingLinks->eq(0)->link()->getUri());
+        $this->assertSame('http://localhost/shopping-lists/save/0b507871-8b5e-4575-b297-a630310fc06e', $editLinks->eq(0)->link()->getUri());
         $this->assertSame('Leclerc Aix', $item->eq(1)->filter('h4')->text());
-        $this->assertSame('http://localhost/shopping-lists/8c6c9813-3b58-4cb7-9056-5c432c230446', $item->filter('a')->eq(1)->link()->getUri());
+        $this->assertSame('http://localhost/shopping-lists/8c6c9813-3b58-4cb7-9056-5c432c230446', $shoppingLinks->eq(1)->link()->getUri());
+        $this->assertSame('http://localhost/shopping-lists/save/8c6c9813-3b58-4cb7-9056-5c432c230446', $editLinks->eq(1)->link()->getUri());
         $this->assertSame('Aroma-Zone', $item->eq(2)->filter('h4')->text());
-        $this->assertSame('http://localhost/shopping-lists/e999a808-21ee-4533-8e05-a7bdd82d5934', $item->filter('a')->eq(2)->link()->getUri());
+        $this->assertSame('http://localhost/shopping-lists/e999a808-21ee-4533-8e05-a7bdd82d5934', $shoppingLinks->eq(2)->link()->getUri());
+        $this->assertSame('http://localhost/shopping-lists/save/e999a808-21ee-4533-8e05-a7bdd82d5934', $editLinks->eq(2)->link()->getUri());
     }
 
     public function testWithoutAuthenticatedUser(): void

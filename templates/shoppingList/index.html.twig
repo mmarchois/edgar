@@ -4,7 +4,7 @@
 {% block navTitle 'shoppingList.list.title'|trans %}
 
 {% block navRight %}
-    <a href="{{ path('app_shoppinglists_save') }}" class="headerButton">
+    <a href="{{ path('app_shoppinglist_save') }}" class="headerButton">
         <ion-icon name="add-circle-outline"></ion-icon>
     </a>
 {% endblock %}
@@ -14,21 +14,44 @@
         <div class="goals">
             {% for shoppingList in shoppingLists %}
                 <div class="item">
-                    <a href="{{ path('app_shoppinglist_detail', {uuid: shoppingList.uuid }) }}">
-                        <div class="in">
+                    <div class="in">
+                        <a class="shopping" href="{{ path('app_shoppinglist_detail', {uuid: shoppingList.uuid }) }}">
                             <div>
                                 <h4>{{ shoppingList.name }}</h4>
                                 <p>
                                     <ion-icon name="people-outline" role="img" class="md hydrated" aria-label="people outline"></ion-icon>
-                                    hmarchois, T&C
+                                    Hélène, Corinne, +2
                                 </p>
                             </div>
-                            <div class="price">20/30</div>
+                        </a>
+                        <div class="dropdown">
+                            <button class="btn btn-transparent btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item edit" href="{{ path('app_shoppinglist_save', {uuid: shoppingList.uuid }) }}">
+                                    <ion-icon name="pencil-outline"></ion-icon>
+                                    {{ 'shoppingList.list.rename'|trans }}
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <ion-icon name="copy-outline"></ion-icon>
+                                    {{ 'shoppingList.list.duplicate'|trans }}
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <ion-icon name="person-add-outline"></ion-icon>
+                                    {{ 'shoppingList.list.share'|trans }}
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">
+                                    <ion-icon name="trash-outline"></ion-icon>
+                                    {{ 'shoppingList.list.delete'|trans }}
+                                </a>
+                            </div>
                         </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </a>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 85%;">20 / 30</div>
+                    </div>
                 </div>
             {% endfor %}
         </div>
