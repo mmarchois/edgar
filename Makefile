@@ -66,6 +66,7 @@ dbinstall: ## Setup databases
 	make console CMD="doctrine:database:create --env=test --if-not-exists"
 	make dbmigrate ARGS="--env=test"
 	make dbfixtures
+	make suggestions
 
 dbmigration: ## Generate new db migration
 	${BIN_CONSOLE} doctrine:migrations:diff
@@ -78,6 +79,9 @@ dbshell: ## Connect to the database
 
 dbfixtures: ## Load tests fixtures
 	make console CMD="doctrine:fixtures:load --env=test -n --purge-with-truncate"
+
+suggestions: ## Import shopping suggestions to Meilisearch
+	make console CMD="app:meilisearch:suggestions"
 
 ##
 ## ----------------

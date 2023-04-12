@@ -2,6 +2,7 @@ version: "3.8"
 
 volumes:
   database: {}
+  meilisearch_data: {}
 
 services:
   database:
@@ -36,3 +37,12 @@ services:
     depends_on:
       - php
       - database
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.1
+    ports:
+      - '7700:7700'
+    environment:
+      MEILI_MASTER_KEY: edgar
+    volumes:
+      - meilisearch_data:/meili_data

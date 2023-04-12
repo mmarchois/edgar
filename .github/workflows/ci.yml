@@ -5,6 +5,13 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
+      meilisearch:
+        image: getmeili/meilisearch:v1.1
+        ports:
+          - '7700:7700'
+        env:
+          MEILI_MASTER_KEY: edgar
+
       postgresql:
         image: postgres:15.2-alpine
         env:
@@ -34,6 +41,8 @@ jobs:
         # .env directly.
         run: |
           echo "DATABASE_URL=postgresql://edgar:edgar@localhost:5432/edgar" >> .env
+          echo "MEILISEARCH_URL=http://localhost:7700" >> .env
+          echo "MEILISEARCH_API_KEY=edgar" >> .env
 
       - name: CI
         run: make ci BIN_PHP="php" NPM="npm" BIN_CONSOLE="php bin/console" BIN_COMPOSER="composer"
