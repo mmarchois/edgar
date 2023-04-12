@@ -12,6 +12,7 @@
 - [Twig](https://twig.symfony.com/)
 - [Turbo](https://turbo.hotwired.dev/) / [Stimulus](https://stimulus.hotwired.dev/)
 - [PostgreSQL](https://www.postgresql.org/)
+- [Meilisearch](https://www.meilisearch.com/)
 
 ## Démarrage du projet
 
