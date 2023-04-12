@@ -27,6 +27,7 @@ final class ImportSuggestionsToMeilisearchCommand extends Command
     {
         $items = json_decode(file_get_contents($this->fixturesFile), true);
         $index = $this->client->index('suggestions');
+        $index->updateSearchableAttributes(['name']);
         $index->addDocuments($items);
         $output->writeln(sprintf('<info>%d suggestions successfully imported to Meilisearch!</info>', \count($items)));
 

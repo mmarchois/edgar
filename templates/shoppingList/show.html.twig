@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ shoppingList.name }} - {{ parent() }}{% endblock %}
+{% block navTitle shoppingList.name %}
+{% block navLeft %}
+    <a href="{{ path('app_shoppinglists') }}" class="headerButton">
+        <ion-icon name="chevron-back-outline" role="img" class="md hydrated" aria-label="chevron back outline"></ion-icon>
+    </a>
+{% endblock %}
+
+{% block body %}
+    <div class="section mt-2">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                    <span class="icon" role="img" aria-label="Empty list">🤔</span>
+                </h5>
+                <p class="card-text">{{ 'shoppingList.detail.how_it_works'|trans|raw }}</p>
+            </div>
+        </div>
+        <a class="btn btn-primary rounded shadowed me-1 btn-fixed" href="{{ path('app_shoppingitems_add', { uuid: shoppingList.uuid }) }}">
+            <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
+            {{ 'shoppingList.detail.add'|trans }}
+        </a>
+    </div>
+{% endblock %}

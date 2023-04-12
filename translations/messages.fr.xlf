@@ -16,7 +16,7 @@
             </trans-unit>
             <trans-unit id="login.title">
                 <source>login.title</source>
-                <target>Bonjour !</target>
+                <target>Bonjour 👋</target>
             </trans-unit>
             <trans-unit id="login.meta.title">
                 <source>login.meta.title</source>
@@ -56,7 +56,7 @@
             </trans-unit>
             <trans-unit id="register.title">
                 <source>register.title</source>
-                <target>Enchanté !</target>
+                <target>Enchanté 👋</target>
             </trans-unit>
             <trans-unit id="register.subtitle">
                 <source>register.subtitle</source>
@@ -149,6 +149,26 @@
             <trans-unit id="shoppingList.list.delete">
                 <source>shoppingList.list.delete</source>
                 <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="shoppingList.list.add">
+                <source>shoppingList.list.add</source>
+                <target>Nouvelle liste</target>
+            </trans-unit>
+            <trans-unit id="shoppingList.detail.how_it_works">
+                <source>shoppingList.detail.how_it_works</source>
+                <target>Votre liste de course est vide. Cliquez sur "Compléter ma liste" et profitez de plus de <![CDATA[<b>]]>1200 suggestions<![CDATA[</b>]]> de produits pour constituer votre liste.</target>
+            </trans-unit>
+            <trans-unit id="shoppingList.detail.add">
+                <source>shoppingList.detail.add</source>
+                <target>Compléter ma liste</target>
+            </trans-unit>
+            <trans-unit id="shoppingList.items.add.title">
+                <source>shoppingList.items.add.title</source>
+                <target>De quoi avez-vous besoin ?</target>
+            </trans-unit>
+            <trans-unit id="shoppingList.items.add.placeholder">
+                <source>shoppingList.items.add.placeholder</source>
+                <target>Rechercher un article ...</target>
             </trans-unit>
         </body>
     </file>
