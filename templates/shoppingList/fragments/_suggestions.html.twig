@@ -1,0 +1,29 @@
+{% if suggestions|filter(suggestion => suggestion.name|lower == search|lower)|length == 0 %}
+    <li role="option" data-autocomplete-value="{{ search|capitalize }}">
+        <div class="item">
+            <div class="icon-box bg-primary">
+                <ion-icon name="add-circle-outline"></ion-icon>
+            </div>
+            <div class="in">
+                <div>
+                    <em>{{ search|capitalize }}</em>
+                </div>
+            </div>
+        </div>
+    </li>
+{% endif %}
+{% for suggestion in suggestions %}
+    <li role="option" data-autocomplete-value="{{ ({name: suggestion.name, category: suggestion.category.id})|json_encode }}">
+        <div class="item">
+            <div class="icon-box bg-primary">
+                <ion-icon name="add-circle-outline"></ion-icon>
+            </div>
+            <div class="in">
+                <div>
+                    {{ suggestion._formatted.name|raw }}
+                    <footer>{{ suggestion.category.name }}</footer>
+                </div>
+            </div>
+        </div>
+    </li>
+{% endfor %}

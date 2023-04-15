@@ -18,6 +18,7 @@ final class ShoppingListDetailControllerTest extends AbstractWebTestCase
 
         $this->assertSame('Leclerc Aix', $crawler->filter('div.pageTitle')->text());
         $this->assertMetaTitle('Leclerc Aix - Edgar, vos courses différemment', $crawler);
+        $this->assertSame("Votre liste de course est vide. Cliquez sur \"Compléter ma liste\" et profitez de plus de 1200 suggestions de produits pour constituer votre liste.", $crawler->filter('p.card-text')->eq(0)->text());
     }
 
     public function testDetailWithBadUuidFormat(): void

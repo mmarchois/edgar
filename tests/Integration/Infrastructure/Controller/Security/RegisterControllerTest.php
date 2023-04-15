@@ -15,7 +15,7 @@ final class RegisterControllerTest extends AbstractWebTestCase
 
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
-        $this->assertSame('Enchanté !', $crawler->filter('h1')->text());
+        $this->assertSame('Enchanté 👋', $crawler->filter('h1')->text());
         $this->assertSame('Remplissez le formulaire pour pouvoir créer votre compte, gratuitement, en 1min.', $crawler->filter('h4')->text());
         $this->assertMetaTitle("Créer mon compte - Edgar, vos courses différemment", $crawler);
 

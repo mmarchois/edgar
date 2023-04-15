@@ -38,7 +38,7 @@ final class ShoppingListDetailController
 
         return new Response(
             content: $this->twig->render(
-                name: 'shoppingList/detail.html.twig',
+                name: 'shoppingList/show.html.twig',
                 context: [
                     'shoppingList' => $shoppingList,
                 ],

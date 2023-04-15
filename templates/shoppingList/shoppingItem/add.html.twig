@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% set title = 'shoppingList.items.add.title'|trans %}
+{% block title %}{{ title }} - {{ parent() }}{% endblock %}
+{% block navTitle title %}
+{% block appCapsuleClass 'extra-header-active full-height' %}
+{% block navLeft %}
+    <a href="{{ path('app_shoppinglist_detail', { uuid }) }}" class="headerButton">
+        <ion-icon name="chevron-back-outline" role="img" class="md hydrated" aria-label="chevron back outline"></ion-icon>
+    </a>
+{% endblock %}
+
+{% block body %}
+    <div data-controller="search" data-search-url-value="{{ path('app_fragment_shopping_suggestions') }}" role="combobox">
+        <input type="hidden" name="selection" data-search-target="hidden"/>
+        <div class="extraHeader">
+            <div class="search-form">
+                <div class="form-group searchbox">
+                    <input type="text" class="form-control" autofocus placeholder="{{ 'shoppingList.items.add.placeholder'|trans }}" data-search-target="input"/>
+                    <i class="input-icon">
+                        <ion-icon name="search-outline" role="img" class="md hydrated" aria-label="search outline"></ion-icon>
+                    </i>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="card">
+                <ul class="listview image-listview inset" data-search-target="results"></ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -2,13 +2,6 @@
 
 {% block title %}{{ 'shoppingList.list.title'|trans }} - {{ parent() }}{% endblock %}
 {% block navTitle 'shoppingList.list.title'|trans %}
-
-{% block navRight %}
-    <a href="{{ path('app_shoppinglist_save') }}" class="headerButton">
-        <ion-icon name="add-circle-outline"></ion-icon>
-    </a>
-{% endblock %}
-
 {% block body %}
     <div class="section mt-2">
         <div class="goals">
@@ -26,7 +19,7 @@
                         </a>
                         <div class="dropdown">
                             <button class="btn btn-transparent btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                                <ion-icon name="ellipsis-vertical"></ion-icon>
                             </button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item edit" href="{{ path('app_shoppinglist_save', {uuid: shoppingList.uuid }) }}">
@@ -54,6 +47,10 @@
                     </div>
                 </div>
             {% endfor %}
+            <a class="btn btn-primary rounded shadowed me-1 btn-fixed" href="{{ path('app_shoppinglist_save') }}">
+                <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
+                {{ 'shoppingList.list.add'|trans }}
+            </a>
         </div>
     </div>
 {% endblock %}
