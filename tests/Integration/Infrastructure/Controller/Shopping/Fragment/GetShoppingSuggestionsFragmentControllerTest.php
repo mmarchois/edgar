@@ -16,7 +16,6 @@ final class GetShoppingSuggestionsFragmentControllerTest extends AbstractWebTest
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
 
-
         $li = $crawler->filter('li');
         $this->assertSame(11, $li->count());
 
@@ -41,7 +40,6 @@ final class GetShoppingSuggestionsFragmentControllerTest extends AbstractWebTest
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
 
-
         $li = $crawler->filter('li');
         $this->assertSame(2, $li->count());
 
@@ -62,5 +60,4 @@ final class GetShoppingSuggestionsFragmentControllerTest extends AbstractWebTest
         $client->request('GET', '/_fragment/shopping-suggestions?search=eau');
         $this->assertResponseRedirects('http://localhost/login', 302);
     }
-
 }

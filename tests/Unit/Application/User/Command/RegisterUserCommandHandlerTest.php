@@ -59,7 +59,7 @@ final class RegisterUserCommandHandlerTest extends TestCase
                     lastName: 'Marchois',
                     email: 'mathieu.marchois@gmail.com',
                     password: 'hashPassword',
-                )
+                ),
             )
             ->willReturn($createdUser);
 

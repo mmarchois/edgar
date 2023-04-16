@@ -10,45 +10,6 @@
 
 {% block body %}
     <div class="section mt-2">
-        <div class="goals">
-            {% for shoppingList in shoppingLists %}
-                <div class="item">
-                    <div class="in">
-                        <a class="shopping" href="{{ path('app_shoppinglist_detail', {uuid: shoppingList.uuid }) }}">
-                            <div>
-                                <h4>{{ shoppingList.name }}</h4>
-                                <p>
-                                    <ion-icon name="people-outline" role="img" class="md hydrated" aria-label="people outline"></ion-icon>
-                                    Hélène, Corinne, +2
-                                </p>
-                            </div>
-                        </a>
-                        <div class="dropdown">
-                            <button class="btn btn-transparent btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item edit" href="{{ path('app_shoppinglist_save', {uuid: shoppingList.uuid }) }}">
-                                    <i class="fas fa-edit pr-2"></i> {{ 'shoppingList.list.rename'|trans }}
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="far fa-copy pr-2"></i> {{ 'shoppingList.list.duplicate'|trans }}
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user-plus pr-2"></i> {{ 'shoppingList.list.share'|trans }}
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-trash-alt pr-2"></i> {{ 'shoppingList.list.delete'|trans }}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 85%;">20 / 30</div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
+        {% include 'shoppingList/_items.html.twig' with { shoppingLists } only %}
     </div>
 {% endblock %}

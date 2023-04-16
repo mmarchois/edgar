@@ -24,6 +24,11 @@ final class ShoppingListRepository extends ServiceEntityRepository implements Sh
         return $shoppingList;
     }
 
+    public function delete(ShoppingList $shoppingList): void
+    {
+        $this->getEntityManager()->remove($shoppingList);
+    }
+
     public function findOneByUuidAndUser(string $uuid, User $user): ?ShoppingList
     {
         return $this->createQueryBuilder('s')
