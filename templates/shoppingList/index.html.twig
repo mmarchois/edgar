@@ -2,6 +2,12 @@
 
 {% block title %}{{ 'shoppingList.list.title'|trans }} - {{ parent() }}{% endblock %}
 {% block navTitle 'shoppingList.list.title'|trans %}
+{% block navRight %}
+    <a href="{{ path('app_shoppinglist_save') }}" class="headerButton" title="{{ 'shoppingList.list.add'|trans }}">
+        <i class="fas fa-plus"></i>
+    </a>
+{% endblock %}
+
 {% block body %}
     <div class="section mt-2">
         <div class="goals">
@@ -19,25 +25,21 @@
                         </a>
                         <div class="dropdown">
                             <button class="btn btn-transparent btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <ion-icon name="ellipsis-vertical"></ion-icon>
+                                <i class="fas fa-ellipsis-v"></i>
                             </button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item edit" href="{{ path('app_shoppinglist_save', {uuid: shoppingList.uuid }) }}">
-                                    <ion-icon name="pencil-outline"></ion-icon>
-                                    {{ 'shoppingList.list.rename'|trans }}
+                                    <i class="fas fa-edit pr-2"></i> {{ 'shoppingList.list.rename'|trans }}
                                 </a>
                                 <a class="dropdown-item" href="#">
-                                    <ion-icon name="copy-outline"></ion-icon>
-                                    {{ 'shoppingList.list.duplicate'|trans }}
+                                    <i class="far fa-copy pr-2"></i> {{ 'shoppingList.list.duplicate'|trans }}
                                 </a>
                                 <a class="dropdown-item" href="#">
-                                    <ion-icon name="person-add-outline"></ion-icon>
-                                    {{ 'shoppingList.list.share'|trans }}
+                                    <i class="fas fa-user-plus pr-2"></i> {{ 'shoppingList.list.share'|trans }}
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">
-                                    <ion-icon name="trash-outline"></ion-icon>
-                                    {{ 'shoppingList.list.delete'|trans }}
+                                    <i class="fas fa-trash-alt pr-2"></i> {{ 'shoppingList.list.delete'|trans }}
                                 </a>
                             </div>
                         </div>
@@ -47,10 +49,6 @@
                     </div>
                 </div>
             {% endfor %}
-            <a class="btn btn-primary rounded shadowed me-1 btn-fixed" href="{{ path('app_shoppinglist_save') }}">
-                <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
-                {{ 'shoppingList.list.add'|trans }}
-            </a>
         </div>
     </div>
 {% endblock %}

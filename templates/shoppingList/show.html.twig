@@ -4,7 +4,7 @@
 {% block navTitle shoppingList.name %}
 {% block navLeft %}
     <a href="{{ path('app_shoppinglists') }}" class="headerButton">
-        <ion-icon name="chevron-back-outline" role="img" class="md hydrated" aria-label="chevron back outline"></ion-icon>
+        <i class="fas fa-chevron-left"></i>
     </a>
 {% endblock %}
 
@@ -19,8 +19,7 @@
             </div>
         </div>
         <a class="btn btn-primary rounded shadowed me-1 btn-fixed" href="{{ path('app_shoppingitems_add', { uuid: shoppingList.uuid }) }}">
-            <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
-            {{ 'shoppingList.detail.add'|trans }}
+            <i class="fas fa-plus pr-2"></i> {{ 'shoppingList.detail.add'|trans }}
         </a>
     </div>
 {% endblock %}

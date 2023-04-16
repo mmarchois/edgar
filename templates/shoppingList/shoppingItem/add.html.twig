@@ -6,7 +6,7 @@
 {% block appCapsuleClass 'extra-header-active full-height' %}
 {% block navLeft %}
     <a href="{{ path('app_shoppinglist_detail', { uuid }) }}" class="headerButton">
-        <ion-icon name="chevron-back-outline" role="img" class="md hydrated" aria-label="chevron back outline"></ion-icon>
+        <i class="fas fa-chevron-left"></i>
     </a>
 {% endblock %}
 
@@ -17,9 +17,7 @@
             <div class="search-form">
                 <div class="form-group searchbox">
                     <input type="text" class="form-control" autofocus placeholder="{{ 'shoppingList.items.add.placeholder'|trans }}" data-search-target="input"/>
-                    <i class="input-icon">
-                        <ion-icon name="search-outline" role="img" class="md hydrated" aria-label="search outline"></ion-icon>
-                    </i>
+                    <i class="input-icon fas fa-search"></i>
                 </div>
             </div>
         </div>
