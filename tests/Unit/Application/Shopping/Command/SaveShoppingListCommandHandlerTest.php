@@ -49,7 +49,7 @@ final class SaveShoppingListCommandHandlerTest extends TestCase
                     uuid: 'ff143a4c-3994-4e7a-8d95-60904211dc73',
                     name: 'Leclerc H&M',
                     owner: $user,
-                )
+                ),
             )
             ->willReturn($createdShoppingList);
 

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App\Tests\Integration\Infrastructure\Controller;
 
-use App\Tests\Integration\Infrastructure\Controller\AbstractWebTestCase;
-
 final class DashboardControllerTest extends AbstractWebTestCase
 {
     public function testDashboard(): void

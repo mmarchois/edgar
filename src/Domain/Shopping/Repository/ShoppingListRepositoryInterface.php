@@ -11,6 +11,8 @@ interface ShoppingListRepositoryInterface
 {
     public function add(ShoppingList $shoppingList): ShoppingList;
 
+    public function delete(ShoppingList $shoppingList): void;
+
     public function findByUser(User $user): array;
 
     public function findOneByUuidAndUser(string $uuid, User $user): ?ShoppingList;

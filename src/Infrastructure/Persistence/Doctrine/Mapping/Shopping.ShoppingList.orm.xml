@@ -12,9 +12,6 @@
         <join-column name="card_uuid" referenced-column-name="uuid" on-delete="SET NULL" nullable="true"/>
     </many-to-one>
     <many-to-many field="users" inversed-by="shoppingLists" target-entity="App\Domain\User\User">
-        <cascade>
-            <cascade-all/>
-        </cascade>
         <join-table name="user_shoppinglist">
             <join-columns>
                 <join-column name="shoppinglist_uuid" referenced-column-name="uuid" />

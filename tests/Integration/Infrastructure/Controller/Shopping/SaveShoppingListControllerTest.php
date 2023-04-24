@@ -21,7 +21,7 @@ final class SaveShoppingListControllerTest extends AbstractWebTestCase
 
         if ($url === '/shopping-lists/save') {
             $this->assertSame('Nouvelle liste', $crawler->filter('div.pageTitle')->text());
-            $this->assertMetaTitle("Nouvelle liste - Edgar, vos courses différemment", $crawler);
+            $this->assertMetaTitle('Nouvelle liste - Edgar, vos courses différemment', $crawler);
         } else {
             $this->assertSame('Renommer "Leclerc Saint-O..."', $crawler->filter('div.pageTitle')->text());
             $this->assertMetaTitle('Renommer "Leclerc Saint-O..." - Edgar, vos courses différemment', $crawler);
@@ -29,13 +29,13 @@ final class SaveShoppingListControllerTest extends AbstractWebTestCase
 
         $saveButton = $crawler->selectButton('Valider');
         $form = $saveButton->form();
-        $form["shopping_list_form[name]"] = "Leclerc";
+        $form['shopping_list_form[name]'] = 'Leclerc';
         $client->submit($form);
         $this->assertResponseStatusCodeSame(303);
 
         $crawler = $client->followRedirect();
         $this->assertResponseStatusCodeSame(200);
-        $this->assertRouteSame('app_shoppinglist_detail');
+        $this->assertRouteSame('app_shoppinglist_show');
     }
 
     /**
@@ -48,11 +48,11 @@ final class SaveShoppingListControllerTest extends AbstractWebTestCase
 
         $saveButton = $crawler->selectButton('Valider');
         $form = $saveButton->form();
-        $form["shopping_list_form[name]"] = "";
+        $form['shopping_list_form[name]'] = '';
         $crawler = $client->submit($form);
 
         $this->assertResponseStatusCodeSame(422);
-        $this->assertSame("Cette valeur ne doit pas être vide.", $crawler->filter('#shopping_list_form_name_error')->text());
+        $this->assertSame('Cette valeur ne doit pas être vide.', $crawler->filter('#shopping_list_form_name_error')->text());
     }
 
     /**
@@ -65,12 +65,12 @@ final class SaveShoppingListControllerTest extends AbstractWebTestCase
 
         $saveButton = $crawler->selectButton('Valider');
         $form = $saveButton->form();
-        $form["shopping_list_form[name]"] = str_repeat('a', 51);
+        $form['shopping_list_form[name]'] = str_repeat('a', 51);
 
         $crawler = $client->submit($form);
 
         $this->assertResponseStatusCodeSame(422);
-        $this->assertSame("Cette chaîne est trop longue. Elle doit avoir au maximum 50 caractères.", $crawler->filter('#shopping_list_form_name_error')->text());
+        $this->assertSame('Cette chaîne est trop longue. Elle doit avoir au maximum 50 caractères.', $crawler->filter('#shopping_list_form_name_error')->text());
     }
 
     public function testEditWithBadUuidFormat(): void

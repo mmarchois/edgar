@@ -17,7 +17,7 @@ final class AddShoppingItemsControllerTest extends AbstractWebTestCase
         $this->assertSecurityHeaders();
 
         $this->assertSame('De quoi avez-vous besoin ?', $crawler->filter('div.pageTitle')->text());
-        $this->assertMetaTitle("De quoi avez-vous besoin ? - Edgar, vos courses différemment", $crawler);
+        $this->assertMetaTitle('De quoi avez-vous besoin ? - Edgar, vos courses différemment', $crawler);
     }
 
     public function testWithoutAuthenticatedUser(): void

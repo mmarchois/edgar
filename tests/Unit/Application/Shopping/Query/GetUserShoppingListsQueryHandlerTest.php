@@ -59,7 +59,7 @@ final class GetUserShoppingListsQueryHandlerTest extends TestCase
         $expectedResult = [
             new ShoppingListView(
                 'ff143a4c-3994-4e7a-8d95-60904211dc73',
-                'Leclerc Saint-Ouen'
+                'Leclerc Saint-Ouen',
             ),
             new ShoppingListView(
                 '327e6f53-693e-4646-af9b-4ea10e512232',

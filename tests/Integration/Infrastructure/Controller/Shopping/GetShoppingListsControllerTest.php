@@ -6,7 +6,7 @@ namespace App\Tests\Integration\Infrastructure\Controller\Shopping;
 
 use App\Tests\Integration\Infrastructure\Controller\AbstractWebTestCase;
 
-final class ShoppingListsControllerTest extends AbstractWebTestCase
+final class GetShoppingListsControllerTest extends AbstractWebTestCase
 {
     public function testMathieuList(): void
     {
@@ -16,7 +16,7 @@ final class ShoppingListsControllerTest extends AbstractWebTestCase
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
         $this->assertSame('Mes listes', $crawler->filter('div.pageTitle')->text());
-        $this->assertMetaTitle("Mes listes - Edgar, vos courses différemment", $crawler);
+        $this->assertMetaTitle('Mes listes - Edgar, vos courses différemment', $crawler);
 
         $item = $crawler->filter('div.item');
         $shoppingLinks = $item->filter('a.shopping');

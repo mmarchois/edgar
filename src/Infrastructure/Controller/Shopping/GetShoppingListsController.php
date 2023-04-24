@@ -10,7 +10,7 @@ use App\Infrastructure\Security\AuthenticatedUser;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-final class ShoppingListsController
+final class GetShoppingListsController
 {
     public function __construct(
         private \Twig\Environment $twig,
