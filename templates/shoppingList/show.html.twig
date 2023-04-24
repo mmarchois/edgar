@@ -11,14 +11,14 @@
 {% block body %}
     <div class="section mt-2">
         <div class="card">
-            <div class="card-body">
-              <h5 class="card-title text-center">
-                    <span class="icon" role="img" aria-label="Empty list">🤔</span>
+            <div class="card-body text-center">
+                <h5 class="card-title">
+                    <i class="fas fa-carrot"></i>
                 </h5>
                 <p class="card-text">{{ 'shoppingList.detail.how_it_works'|trans|raw }}</p>
             </div>
         </div>
-        <a class="btn btn-primary rounded shadowed me-1 btn-fixed" href="{{ path('app_shoppingitems_add', { uuid: shoppingList.uuid }) }}">
+        <a class="btn btn-primary rounded shadowed me-1 btn-lg btn-fixed" href="{{ path('app_shoppingitems_add', { uuid: shoppingList.uuid }) }}">
             <i class="fas fa-plus pr-2"></i> {{ 'shoppingList.detail.add'|trans }}
         </a>
     </div>

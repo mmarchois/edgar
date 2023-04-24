@@ -156,7 +156,7 @@
             </trans-unit>
             <trans-unit id="shoppingList.detail.how_it_works">
                 <source>shoppingList.detail.how_it_works</source>
-                <target>Votre liste de course est vide. Cliquez sur "Compléter ma liste" et profitez de plus de <![CDATA[<b>]]>1200 suggestions<![CDATA[</b>]]> de produits pour constituer votre liste.</target>
+                <target>Votre liste de course est vide !<![CDATA[<br/>]]>Cliquez sur "<![CDATA[<b>]]>Compléter ma liste<![CDATA[</b>]]>" et profitez de plus de <![CDATA[<b>]]>1200 suggestions<![CDATA[</b>]]> de produits.</target>
             </trans-unit>
             <trans-unit id="shoppingList.detail.add">
                 <source>shoppingList.detail.add</source>
@@ -169,6 +169,14 @@
             <trans-unit id="shoppingList.items.add.placeholder">
                 <source>shoppingList.items.add.placeholder</source>
                 <target>Rechercher un article ...</target>
+            </trans-unit>
+            <trans-unit id="shoppingList.how_it_works">
+                <source>shoppingList.how_it_works</source>
+                <target>Commencez vos achats !<![CDATA[<br/>]]>Cliquez sur "<![CDATA[<b>]]>Nouvelle liste<![CDATA[</b>]]>" pour créer votre première liste.</target>
+            </trans-unit>
+            <trans-unit id="shoppingList.add">
+                <source>shoppingList.add</source>
+                <target>Nouvelle liste</target>
             </trans-unit>
         </body>
     </file>

@@ -2,12 +2,10 @@
     <li role="option" data-autocomplete-value="{{ search|capitalize }}">
         <div class="item">
             <div class="icon-box bg-primary">
-                <ion-icon name="add-circle-outline"></ion-icon>
+                <i class="fas fa-plus"></i>
             </div>
             <div class="in">
-                <div>
-                    <em>{{ search|capitalize }}</em>
-                </div>
+                <div><em>{{ search|capitalize }}</em></div>
             </div>
         </div>
     </li>
@@ -15,13 +13,16 @@
 {% for suggestion in suggestions %}
     <li role="option" data-autocomplete-value="{{ ({name: suggestion.name, category: suggestion.category.id})|json_encode }}">
         <div class="item">
-            <div class="icon-box bg-primary">
-                <ion-icon name="add-circle-outline"></ion-icon>
+            <div class="icon-box bg-success">
+                <i class="fas fa-plus"></i>
             </div>
             <div class="in">
                 <div>
                     {{ suggestion._formatted.name|raw }}
                     <footer>{{ suggestion.category.name }}</footer>
+                </div>
+                <div>
+                    3 <i class="fas fa-minus"></i>
                 </div>
             </div>
         </div>
