@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Integration\Infrastructure\Controller\Security;
+namespace App\Tests\Integration\Infrastructure\Controller\Auth;
 
 use App\Tests\Integration\Infrastructure\Controller\AbstractWebTestCase;
 
@@ -11,7 +11,7 @@ final class RegisterControllerTest extends AbstractWebTestCase
     public function testSuccessfullyRegister(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/register');
+        $crawler = $client->request('GET', '/auth/register');
 
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
@@ -31,13 +31,13 @@ final class RegisterControllerTest extends AbstractWebTestCase
 
         $crawler = $client->followRedirect();
         $this->assertResponseStatusCodeSame(200);
-        $this->assertRouteSame('app_dashboard');
+        $this->assertRouteSame('app_shoppinglists');
     }
 
     public function testEmptyValues(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/register');
+        $crawler = $client->request('GET', '/auth/register');
 
         $saveButton = $crawler->selectButton('Créer mon compte');
         $form = $saveButton->form();
@@ -53,7 +53,7 @@ final class RegisterControllerTest extends AbstractWebTestCase
     public function testBadValues(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/register');
+        $crawler = $client->request('GET', '/auth/register');
 
         $saveButton = $crawler->selectButton('Créer mon compte');
         $form = $saveButton->form();
@@ -75,7 +75,7 @@ final class RegisterControllerTest extends AbstractWebTestCase
     public function testEmailAlreadyRegistered(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/register');
+        $crawler = $client->request('GET', '/auth/register');
 
         $saveButton = $crawler->selectButton('Créer mon compte');
         $form = $saveButton->form();

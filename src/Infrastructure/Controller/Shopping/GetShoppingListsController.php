@@ -19,7 +19,7 @@ final class GetShoppingListsController
     ) {
     }
 
-    #[Route('/shopping-lists', name: 'app_shoppinglists', methods: ['GET'])]
+    #[Route('/', name: 'app_shoppinglists', methods: ['GET'])]
     public function __invoke(): Response
     {
         $user = $this->authenticatedUser->getUser();

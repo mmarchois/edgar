@@ -19,7 +19,7 @@ final class SaveShoppingListControllerTest extends AbstractWebTestCase
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
 
-        if ($url === '/shopping-lists/save') {
+        if ($url === '/save') {
             $this->assertSame('Nouvelle liste', $crawler->filter('div.pageTitle')->text());
             $this->assertMetaTitle('Nouvelle liste - Edgar, vos courses différemment', $crawler);
         } else {
@@ -76,7 +76,7 @@ final class SaveShoppingListControllerTest extends AbstractWebTestCase
     public function testEditWithBadUuidFormat(): void
     {
         $client = $this->login();
-        $client->request('GET', '/shopping-lists/save/0b507871');
+        $client->request('GET', '/save/0b507871');
 
         $this->assertResponseStatusCodeSame(400);
     }
@@ -84,7 +84,7 @@ final class SaveShoppingListControllerTest extends AbstractWebTestCase
     public function testEditNonAuthorizedShoppingList(): void
     {
         $client = $this->login();
-        $client->request('GET', '/shopping-lists/save/e999a808-21ee-4533-8e05-a7bdd82d5934');
+        $client->request('GET', '/save/e999a808-21ee-4533-8e05-a7bdd82d5934');
 
         $this->assertResponseStatusCodeSame(404);
     }
@@ -96,14 +96,14 @@ final class SaveShoppingListControllerTest extends AbstractWebTestCase
     {
         $client = static::createClient();
         $client->request('GET', $url);
-        $this->assertResponseRedirects('http://localhost/login', 302);
+        $this->assertResponseRedirects('http://localhost/auth/login', 302);
     }
 
     private function accessUrlsProvider(): array
     {
         return [
-            ['/shopping-lists/save'],
-            ['/shopping-lists/save/0b507871-8b5e-4575-b297-a630310fc06e'],
+            ['/save'],
+            ['/save/0b507871-8b5e-4575-b297-a630310fc06e'],
         ];
     }
 }

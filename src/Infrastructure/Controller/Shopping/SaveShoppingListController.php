@@ -29,7 +29,7 @@ final class SaveShoppingListController extends AbstractShoppingListController
         parent::__construct($queryBus);
     }
 
-    #[Route('/shopping-lists/save/{uuid}', name: 'app_shoppinglist_save', methods: ['GET', 'POST'])]
+    #[Route('/save/{uuid}', name: 'app_shoppinglist_save', methods: ['GET', 'POST'])]
     public function __invoke(Request $request, string $uuid = null): Response
     {
         $user = $this->authenticatedUser->getUser();

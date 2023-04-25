@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Integration\Infrastructure\Controller\Security;
+namespace App\Tests\Integration\Infrastructure\Controller\Auth;
 
 use App\Tests\Integration\Infrastructure\Controller\AbstractWebTestCase;
 
@@ -11,7 +11,7 @@ final class LoginControllerTest extends AbstractWebTestCase
     public function testLoginSuccessfully(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/login');
+        $crawler = $client->request('GET', '/auth/login');
 
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
@@ -27,13 +27,13 @@ final class LoginControllerTest extends AbstractWebTestCase
         $this->assertResponseStatusCodeSame(302);
         $client->followRedirect();
         $this->assertResponseStatusCodeSame(200);
-        $this->assertRouteSame('app_dashboard');
+        $this->assertRouteSame('app_shoppinglists');
     }
 
     public function testLoginWithUnknownAccount(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/login');
+        $crawler = $client->request('GET', '/auth/login');
 
         $this->assertResponseStatusCodeSame(200);
 
