@@ -14,7 +14,7 @@ final class AddShoppingItemsController
     ) {
     }
 
-    #[Route('/shopping-lists/{uuid}/add', name: 'app_shoppingitems_add', methods: ['GET', 'POST'])]
+    #[Route('/{uuid}/add', name: 'app_shoppingitems_add', methods: ['GET', 'POST'])]
     public function __invoke(string $uuid): Response
     {
         return new Response(

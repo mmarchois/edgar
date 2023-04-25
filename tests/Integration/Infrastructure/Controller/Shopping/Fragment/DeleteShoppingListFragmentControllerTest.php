@@ -11,7 +11,7 @@ final class DeleteShoppingListFragmentControllerTest extends AbstractWebTestCase
     public function testDelete(): void
     {
         $client = $this->login();
-        $crawler = $client->request('DELETE', '/_fragment/shopping-lists/0b507871-8b5e-4575-b297-a630310fc06e');
+        $crawler = $client->request('DELETE', '/_fragment/0b507871-8b5e-4575-b297-a630310fc06e/delete');
 
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
@@ -25,7 +25,7 @@ final class DeleteShoppingListFragmentControllerTest extends AbstractWebTestCase
     public function testDeleteNonAuthorizedShoppingList(): void
     {
         $client = $this->login();
-        $client->request('DELETE', '/_fragment/shopping-lists/e999a808-21ee-4533-8e05-a7bdd82d5934');
+        $client->request('DELETE', '/_fragment/e999a808-21ee-4533-8e05-a7bdd82d5934/delete');
 
         $this->assertResponseStatusCodeSame(404);
     }
@@ -33,7 +33,7 @@ final class DeleteShoppingListFragmentControllerTest extends AbstractWebTestCase
     public function testBadUuidFormat(): void
     {
         $client = $this->login();
-        $client->request('DELETE', '/_fragment/shopping-lists/abc');
+        $client->request('DELETE', '/_fragment/abc/delete');
 
         $this->assertResponseStatusCodeSame(404);
     }
@@ -41,7 +41,7 @@ final class DeleteShoppingListFragmentControllerTest extends AbstractWebTestCase
     public function testWithoutAuthenticatedUser(): void
     {
         $client = static::createClient();
-        $client->request('DELETE', '/_fragment/shopping-lists/0b507871-8b5e-4575-b297-a630310fc06e');
-        $this->assertResponseRedirects('http://localhost/login', 302);
+        $client->request('DELETE', '/_fragment/0b507871-8b5e-4575-b297-a630310fc06e/delete');
+        $this->assertResponseRedirects('http://localhost/auth/login', 302);
     }
 }

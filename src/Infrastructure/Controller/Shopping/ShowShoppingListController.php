@@ -20,7 +20,7 @@ final class ShowShoppingListController extends AbstractShoppingListController
     }
 
     #[Route(
-        '/shopping-lists/{uuid}',
+        '/{uuid}',
         name: 'app_shoppinglist_show',
         requirements: ['uuid' => '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'],
         methods: ['GET'],

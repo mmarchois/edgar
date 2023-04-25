@@ -11,7 +11,7 @@ final class AddShoppingItemsControllerTest extends AbstractWebTestCase
     public function testAdd(): void
     {
         $client = $this->login();
-        $crawler = $client->request('GET', '/shopping-lists/0b507871-8b5e-4575-b297-a630310fc06e/add');
+        $crawler = $client->request('GET', '/0b507871-8b5e-4575-b297-a630310fc06e/add');
 
         $this->assertResponseStatusCodeSame(200);
         $this->assertSecurityHeaders();
@@ -23,7 +23,7 @@ final class AddShoppingItemsControllerTest extends AbstractWebTestCase
     public function testWithoutAuthenticatedUser(): void
     {
         $client = static::createClient();
-        $client->request('GET', '/shopping-lists/0b507871-8b5e-4575-b297-a630310fc06e/add');
-        $this->assertResponseRedirects('http://localhost/login', 302);
+        $client->request('GET', '/0b507871-8b5e-4575-b297-a630310fc06e/add');
+        $this->assertResponseRedirects('http://localhost/auth/login', 302);
     }
 }

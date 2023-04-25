@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Controller\Security;
+namespace App\Infrastructure\Controller\Auth;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,7 +16,7 @@ final class LoginController
     ) {
     }
 
-    #[Route('/login', name: 'app_login', methods: ['GET', 'POST'])]
+    #[Route('/auth/login', name: 'app_login', methods: ['GET', 'POST'])]
     public function __invoke(): Response
     {
         $error = $this->authenticationUtils->getLastAuthenticationError();
@@ -24,7 +24,7 @@ final class LoginController
 
         return new Response(
             $this->twig->render(
-                name: 'security/login.html.twig',
+                name: 'auth/login.html.twig',
                 context: [
                     'last_username' => $lastUsername,
                     'error' => $error,

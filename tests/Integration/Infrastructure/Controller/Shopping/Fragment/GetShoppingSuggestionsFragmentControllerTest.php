@@ -19,17 +19,17 @@ final class GetShoppingSuggestionsFragmentControllerTest extends AbstractWebTest
         $li = $crawler->filter('li');
         $this->assertSame(11, $li->count());
 
-        $this->assertSame('Eau 🥤 Boissons', $li->eq(0)->text());
-        $this->assertSame('Eau aromatisée 🥤 Boissons', $li->eq(1)->text());
-        $this->assertSame('Eau gazeuse 🥤 Boissons', $li->eq(2)->text());
-        $this->assertSame('Eau minérale 🥤 Boissons', $li->eq(3)->text());
-        $this->assertSame('Eau Mont roucous 🥤 Boissons', $li->eq(4)->text());
-        $this->assertSame('Eau pétillante 🥤 Boissons', $li->eq(5)->text());
-        $this->assertSame('Eau de javel 🧽 Entretien & ménage', $li->eq(6)->text());
-        $this->assertSame('Eau déminéralisée 🧽 Entretien & ménage', $li->eq(7)->text());
-        $this->assertSame('Eau distillée 🧽 Entretien & ménage', $li->eq(8)->text());
-        $this->assertSame('Récupérateur d\'eau 🌼 Jardinage', $li->eq(9)->text());
-        $this->assertSame('Verre à eau 🏡 Maison & loisir', $li->eq(10)->text());
+        $this->assertSame('Eau 🥤 Boissons 3', $li->eq(0)->text());
+        $this->assertSame('Eau aromatisée 🥤 Boissons 3', $li->eq(1)->text());
+        $this->assertSame('Eau gazeuse 🥤 Boissons 3', $li->eq(2)->text());
+        $this->assertSame('Eau minérale 🥤 Boissons 3', $li->eq(3)->text());
+        $this->assertSame('Eau Mont roucous 🥤 Boissons 3', $li->eq(4)->text());
+        $this->assertSame('Eau pétillante 🥤 Boissons 3', $li->eq(5)->text());
+        $this->assertSame('Eau de javel 🧽 Entretien & ménage 3', $li->eq(6)->text());
+        $this->assertSame('Eau déminéralisée 🧽 Entretien & ménage 3', $li->eq(7)->text());
+        $this->assertSame('Eau distillée 🧽 Entretien & ménage 3', $li->eq(8)->text());
+        $this->assertSame('Récupérateur d\'eau 🌼 Jardinage 3', $li->eq(9)->text());
+        $this->assertSame('Verre à eau 🏡 Maison & loisir 3', $li->eq(10)->text());
     }
 
     public function testNocioSuggestions(): void
@@ -44,7 +44,7 @@ final class GetShoppingSuggestionsFragmentControllerTest extends AbstractWebTest
         $this->assertSame(2, $li->count());
 
         $this->assertSame('Nocio', $li->eq(0)->text()); // User value
-        $this->assertSame('Nociollata 🥐 Petit déjeuner', $li->eq(1)->text());
+        $this->assertSame('Nociollata 🥐 Petit déjeuner 3', $li->eq(1)->text());
     }
 
     public function testSearchMissing(): void
@@ -58,6 +58,6 @@ final class GetShoppingSuggestionsFragmentControllerTest extends AbstractWebTest
     {
         $client = static::createClient();
         $client->request('GET', '/_fragment/shopping-suggestions?search=eau');
-        $this->assertResponseRedirects('http://localhost/login', 302);
+        $this->assertResponseRedirects('http://localhost/auth/login', 302);
     }
 }

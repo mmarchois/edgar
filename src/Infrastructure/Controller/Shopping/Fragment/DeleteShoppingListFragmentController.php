@@ -24,7 +24,7 @@ final class DeleteShoppingListFragmentController
     }
 
     #[Route(
-        '/_fragment/shopping-lists/{uuid}',
+        '/_fragment/{uuid}/delete',
         name: 'fragment_shoppinglist_delete',
         requirements: ['uuid' => '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'],
         methods: ['DELETE'],
