@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ shoppingList.name }} - {{ parent() }}{% endblock %}
-{% block navTitle shoppingList.name %}
+{% set title = shoppingList.name|u.truncate(20, '...', true) %}
+{% block title %}{{ title }} - {{ parent() }}{% endblock %}
+{% block navTitle title %}
 {% block navLeft %}
     <a href="{{ path('app_shoppinglists') }}" class="headerButton">
         <i class="fas fa-chevron-left"></i>

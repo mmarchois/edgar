@@ -4,7 +4,7 @@
             <div class="in">
                 <a class="shopping" href="{{ path('app_shoppinglist_show', {uuid: shoppingList.uuid }) }}">
                     <div>
-                        <h4>{{ shoppingList.name }}</h4>
+                        <h4>{{ shoppingList.name|u.truncate(35, '...', true) }}</h4>
                         <p>
                             <ion-icon name="people-outline" role="img" class="md hydrated" aria-label="people outline"></ion-icon>
                             Hélène, Corinne, +2

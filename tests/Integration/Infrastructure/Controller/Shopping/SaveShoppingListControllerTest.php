@@ -23,8 +23,8 @@ final class SaveShoppingListControllerTest extends AbstractWebTestCase
             $this->assertSame('Nouvelle liste', $crawler->filter('div.pageTitle')->text());
             $this->assertMetaTitle('Nouvelle liste - Edgar, vos courses différemment', $crawler);
         } else {
-            $this->assertSame('Renommer "Leclerc Saint-O..."', $crawler->filter('div.pageTitle')->text());
-            $this->assertMetaTitle('Renommer "Leclerc Saint-O..." - Edgar, vos courses différemment', $crawler);
+            $this->assertSame('Renommer "Leclerc Saint-Ouen"', $crawler->filter('div.pageTitle')->text());
+            $this->assertMetaTitle('Renommer "Leclerc Saint-Ouen" - Edgar, vos courses différemment', $crawler);
         }
 
         $saveButton = $crawler->selectButton('Valider');
